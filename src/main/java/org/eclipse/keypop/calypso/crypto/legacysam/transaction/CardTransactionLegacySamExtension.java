@@ -18,7 +18,7 @@ import org.eclipse.keypop.calypso.card.transaction.spi.CardTransactionCryptoExte
  * computation and signature verification operations.
  *
  * <p>An instance of this interface can be obtained via the methods {@link
- * org.eclipse.keypop.calypso.card.transaction.SecureStandardModeTransactionManager#getCryptoExtension(Class)}
+ * org.eclipse.keypop.calypso.card.transaction.SecureRegularModeTransactionManager#getCryptoExtension(Class)}
  * or {@link
  * org.eclipse.keypop.calypso.card.transaction.SecureExtendedModeTransactionManager#getCryptoExtension(Class)}.
  *

@@ -10,6 +10,7 @@
  ************************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam;
 
+import org.eclipse.keypop.calypso.card.transaction.spi.SymmetricCryptoTransactionManagerFactory;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySamSelectionExtension;
 import org.eclipse.keypop.calypso.crypto.legacysam.transaction.AsyncTransactionCreatorManager;
@@ -28,6 +29,16 @@ import org.eclipse.keypop.reader.CardReader;
  * @since 1.0.0
  */
 public interface LegacySamApiFactory {
+
+  /**
+   * Returns a new instance of {@link SymmetricCryptoTransactionManagerFactory} to be used to secure
+   * a card transaction.
+   *
+   * @return A new instance of {@link SymmetricCryptoTransactionManagerFactory} to be used to secure
+   *     a card transaction.
+   * @since 1.0.0
+   */
+  SymmetricCryptoTransactionManagerFactory createSymmetricCryptoTransactionManagerFactory();
 
   /**
    * Returns a new instance of {@link LegacySamSelectionExtension}.

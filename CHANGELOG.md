@@ -5,6 +5,59 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+:warning: The project has been migrated from the [Calypsonet Terminal Calypso Crypto Legacy SAM API](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api)
+GitHub repository.
+### Added
+- `LegacySamApiFactory` centralizes the methods used to create instances of the various interfaces of
+  the API.
+- `CardTransactionLegacySamExtension` extends the SPI `CardTransactionCryptoExtension` provided by
+  "Keypop Calypso Card API" to extends a card transaction with specific SAM features (e.g. signature computation, etc.).
+- New methods added to `LegacySamSelectionExtension`:
+  - `setUnlockData(String unlockData, LegacySam.ProductType productType)` sets the unlock data to be used to unlock a 
+    SAM C1 (8 or 16 bytes) and schedules the execution of the "Unlock data" command in the first position.
+  - `prepareReadSystemKeyParameters(SystemKeyType systemKeyType)` schedules the execution of a "Read Key Parameters" 
+    command for a system key.
+  - `prepareReadCounterStatus(int counterNumber)` schedules the execution of a "Read Event Counter" and "Read Ceiling" 
+    commands to read the status of a counter.
+  - `prepareReadAllCountersStatus()` schedules the execution of a "Read Event Counter" and "Read Ceiling" commands to 
+    read the status of all counters.
+- New method added to `LegacySam`:
+  - `getCounterIncrementAccess(int counterNumber)` returns the counter increment access mode.
+### Changed
+- The project license is now "MIT License" (previously "Eclipse Public License 2.0").
+- CI: The Gradle plugin `org.eclipse.keyple:keyple-gradle:0.2.+` has been replaced
+  by `org.eclipse.keypop:keypop-gradle:0.1.+`.
+- Renamed:
+  - Artifact `org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api` -> `org.eclipse.keypop:keypop-calypso-crypto-legacysam-java-api`
+  - Package `org.calypsonet.terminal.calypso.crypto.legacysam` -> `org.eclipse.keypop.calypso.crypto.legacysam`
+  - Interface `LegacySamSelection` -> `LegacySamSelectionExtension`
+  - Interface `LSSecuritySetting` -> `SecuritySetting`
+  - Interface `LSFreeTransactionManager` -> `FreeTransactionManager`
+  - Interface `LSAsyncTransactionCreatorManager` -> `AsyncTransactionCreatorManager`
+  - Interface `LSAsyncTransactionExecutorManager` -> `AsyncTransactionExecutorManager`
+  - Interface `LSRevocationServiceSpi` -> `LegacySamRevocationServiceSpi`
+- All legacy factories were merged into a single factory `LegacySamApiFactory`:
+  - `LegacySamSelectionFactory`
+  - `LSTransactionManagerFactory`
+  - `LSSecuritySettingFactory`
+  - `LSCardTransactionCryptoExtensionFactory`
+  - `LSCommandDataFactory`
+- Method signature refactored:
+  - `LSWriteTransactionManager.prepareWriteCounterConfiguration(int counterNumber, int ceilingValue, boolean isManualCounterIncrementAuthorized)`
+    -> `WriteTransactionManager.prepareWriteCounterConfiguration(int counterNumber, int ceilingValue, CounterIncrementAccess counterIncrementAccess)`.
+    The enum `CounterIncrementAccess` has been created for this purpose.
+  - `TraceableSignatureComputationData.withSamTraceabilityMode(int offset, boolean usePartialSamSerialNumber)` 
+    -> `TraceableSignatureComputationData.withSamTraceabilityMode(int offset, SamTraceabilityMode samTraceabilityMode)`.
+    The enum `SamTraceabilityMode` has been created for this purpose.
+  - `TraceableSignatureVerificationData.withSamTraceabilityMode(int offset, boolean isPartialSamSerialNumber, LSRevocationServiceSpi samRevocationService)`
+    -> `TraceableSignatureComputationData.withSamTraceabilityMode(int offset, SamTraceabilityMode samTraceabilityMode, LegacySamRevocationServiceSpi samRevocationService)`.
+    The enum `SamTraceabilityMode` has been created for this purpose.
+### Removed
+- The `filterByProductType(LegacySam.ProductType productType)` and `filterBySerialNumber(String serialNumberRegex)` 
+  methods of `LegacySamSelection` have been removed following the introduction of generic selection filters in the 
+  "Keypop Reader API". Indeed, these two methods implemented filtering on power-on data, and it is now up to the 
+  implementation libraries to propose utility methods to recreate the regexes to be used for power-on data based on 
+  product type and/or serial number.
 
 ## [0.2.0] - 2023-02-27
 ### Added
