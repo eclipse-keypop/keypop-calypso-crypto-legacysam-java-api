@@ -13,19 +13,19 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 /**
  * The SAM traceability mode to use with traceable signature operations.
  *
- * @since 1.0.0
+ * @since 0.3.0
  */
 public enum SamTraceabilityMode {
   /**
    * Full SAM serial number (4 Bytes).
    *
-   * @since 1.0.0
+   * @since 0.3.0
    */
   FULL_SERIAL_NUMBER,
   /**
    * Truncated SAM serial number (3 LSBytes)
    *
-   * @since 1.0.0
+   * @since 0.3.0
    */
   TRUNCATED_SERIAL_NUMBER
 }

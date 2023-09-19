@@ -22,7 +22,7 @@ import org.eclipse.keypop.calypso.card.transaction.spi.CardTransactionCryptoExte
  * or {@link
  * org.eclipse.keypop.calypso.card.transaction.SecureExtendedModeTransactionManager#getCryptoExtension(Class)}.
  *
- * @since 1.0.0
+ * @since 0.3.0
  */
 public interface CardTransactionLegacySamExtension extends CardTransactionCryptoExtension {
 
@@ -52,7 +52,7 @@ public interface CardTransactionLegacySamExtension extends CardTransactionCrypto
    * @see SignatureComputationData
    * @see BasicSignatureComputationData
    * @see TraceableSignatureComputationData
-   * @since 1.0.0
+   * @since 0.3.0
    */
   CardTransactionLegacySamExtension prepareComputeSignature(SignatureComputationData<?> data);
 
@@ -71,7 +71,7 @@ public interface CardTransactionLegacySamExtension extends CardTransactionCrypto
    * @see SignatureVerificationData
    * @see BasicSignatureVerificationData
    * @see TraceableSignatureVerificationData
-   * @since 1.0.0
+   * @since 0.3.0
    */
   CardTransactionLegacySamExtension prepareVerifySignature(SignatureVerificationData<?> data);
 }
