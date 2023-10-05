@@ -29,7 +29,7 @@ GitHub repository.
   by `org.eclipse.keypop:keypop-gradle:0.1.+`.
 - Renamed:
   - Artifact `org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api` -> `org.eclipse.keypop:keypop-calypso-crypto-legacysam-java-api`
-  - Package `org.calypsonet.terminal.calypso.crypto.legacysam` -> `org.eclipse.keypop.calypso.crypto.legacysam`
+  - Package `org.eclipse.keypop.calypso.card.crypto.legacysam` -> `org.eclipse.keypop.calypso.crypto.legacysam`
   - Interface `LegacySamSelection` -> `LegacySamSelectionExtension`
   - Interface `LSSecuritySetting` -> `SecuritySetting`
   - Interface `LSFreeTransactionManager` -> `FreeTransactionManager`
