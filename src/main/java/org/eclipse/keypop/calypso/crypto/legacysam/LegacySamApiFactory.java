@@ -10,7 +10,7 @@
  ************************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam;
 
-import org.eclipse.keypop.calypso.card.transaction.spi.SymmetricCryptoTransactionManagerFactory;
+import org.eclipse.keypop.calypso.card.transaction.spi.SymmetricCryptoCardTransactionManagerFactory;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySamSelectionExtension;
 import org.eclipse.keypop.calypso.crypto.legacysam.transaction.AsyncTransactionCreatorManager;
@@ -39,17 +39,17 @@ public interface LegacySamApiFactory {
   LegacySamSelectionExtension createLegacySamSelectionExtension();
 
   /**
-   * Returns a new instance of {@link SymmetricCryptoTransactionManagerFactory} to be used to secure
-   * a card transaction.
+   * Returns a new instance of {@link SymmetricCryptoCardTransactionManagerFactory} to be used to
+   * secure a card transaction.
    *
    * @param samReader The reader to use to communicate with the SAM.
    * @param sam The associated control SAM to be used with the card transaction.
-   * @return A new instance of {@link SymmetricCryptoTransactionManagerFactory} to be used to secure
-   *     a card transaction.
+   * @return A new instance of {@link SymmetricCryptoCardTransactionManagerFactory} to be used to
+   *     secure a card transaction.
    * @throws IllegalArgumentException If an argument is null or invalid.
    * @since 0.3.0
    */
-  SymmetricCryptoTransactionManagerFactory createSymmetricCryptoTransactionManagerFactory(
+  SymmetricCryptoCardTransactionManagerFactory createSymmetricCryptoCardTransactionManagerFactory(
       CardReader samReader, LegacySam sam);
 
   /**

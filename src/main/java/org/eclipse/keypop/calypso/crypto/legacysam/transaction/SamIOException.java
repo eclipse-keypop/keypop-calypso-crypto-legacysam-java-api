@@ -11,7 +11,7 @@
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
 /**
- * Indicates a communication error with the SAM (e.g. timeout, network error, etc...).
+ * Indicates a communication error with the SAM (e.g. timeout, network error, etc.).
  *
  * @since 0.1.0
  */
