@@ -1,4 +1,4 @@
-/*
+/* **************************************************************************************
  * Copyright (c) 2023 Calypso Networks Association https://calypsonet.org/
  *
  * This file is part of Eclipse Keypop.
@@ -7,7 +7,7 @@
  * it under the terms of the MIT License. A copy of the License is located at
  *
  * http://opensource.org/licenses/MIT
- */
+ ************************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.sam;
 
 import org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory;
@@ -22,7 +22,7 @@ import org.eclipse.keypop.reader.selection.spi.CardSelectionExtension;
  * <p>An instance of this interface can be obtained via the method {@link
  * LegacySamApiFactory#createLegacySamSelectionExtension()}.
  *
- * @since 1.0.0
+ * @since 0.3.0
  */
 public interface LegacySamSelectionExtension extends CardSelectionExtension {
 
@@ -51,7 +51,7 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @return The current instance.
    * @throws IllegalArgumentException If the provided unlock data or product type is null, malformed
    *     or out of range.
-   * @since 1.0.0
+   * @since 0.3.0
    */
   LegacySamSelectionExtension setUnlockData(String unlockData, LegacySam.ProductType productType);
 
@@ -64,7 +64,7 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @param systemKeyType The type of system key.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is null.
-   * @since 1.0.0
+   * @since 0.3.0
    */
   LegacySamSelectionExtension prepareReadSystemKeyParameters(SystemKeyType systemKeyType);
 
@@ -79,7 +79,7 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @param counterNumber The number of the counter whose status is to be read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is out of range.
-   * @since 1.0.0
+   * @since 0.3.0
    */
   LegacySamSelectionExtension prepareReadCounterStatus(int counterNumber);
 
@@ -88,7 +88,7 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * status of all counters.
    *
    * @return The current instance.
-   * @since 1.0.0
+   * @since 0.3.0
    */
   LegacySamSelectionExtension prepareReadAllCountersStatus();
 }

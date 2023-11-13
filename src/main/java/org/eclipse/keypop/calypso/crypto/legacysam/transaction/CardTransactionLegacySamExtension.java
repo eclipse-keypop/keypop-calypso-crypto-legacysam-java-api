@@ -1,4 +1,4 @@
-/*
+/* **************************************************************************************
  * Copyright (c) 2023 Calypso Networks Association https://calypsonet.org/
  *
  * This file is part of Eclipse Keypop.
@@ -7,7 +7,7 @@
  * it under the terms of the MIT License. A copy of the License is located at
  *
  * http://opensource.org/licenses/MIT
- */
+ ************************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
 import org.eclipse.keypop.calypso.card.transaction.spi.CardTransactionCryptoExtension;
@@ -18,11 +18,11 @@ import org.eclipse.keypop.calypso.card.transaction.spi.CardTransactionCryptoExte
  * computation and signature verification operations.
  *
  * <p>An instance of this interface can be obtained via the methods {@link
- * org.eclipse.keypop.calypso.card.transaction.SecureStandardModeTransactionManager#getCryptoExtension(Class)}
+ * org.eclipse.keypop.calypso.card.transaction.SecureRegularModeTransactionManager#getCryptoExtension(Class)}
  * or {@link
  * org.eclipse.keypop.calypso.card.transaction.SecureExtendedModeTransactionManager#getCryptoExtension(Class)}.
  *
- * @since 1.0.0
+ * @since 0.3.0
  */
 public interface CardTransactionLegacySamExtension extends CardTransactionCryptoExtension {
 
@@ -52,7 +52,7 @@ public interface CardTransactionLegacySamExtension extends CardTransactionCrypto
    * @see SignatureComputationData
    * @see BasicSignatureComputationData
    * @see TraceableSignatureComputationData
-   * @since 1.0.0
+   * @since 0.3.0
    */
   CardTransactionLegacySamExtension prepareComputeSignature(SignatureComputationData<?> data);
 
@@ -71,7 +71,7 @@ public interface CardTransactionLegacySamExtension extends CardTransactionCrypto
    * @see SignatureVerificationData
    * @see BasicSignatureVerificationData
    * @see TraceableSignatureVerificationData
-   * @since 1.0.0
+   * @since 0.3.0
    */
   CardTransactionLegacySamExtension prepareVerifySignature(SignatureVerificationData<?> data);
 }
