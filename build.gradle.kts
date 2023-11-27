@@ -27,8 +27,8 @@ repositories {
     maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
 }
 dependencies {
-    implementation("org.eclipse.keypop:keypop-reader-java-api:2.0.0-SNAPSHOT") {isChanging=true}
-    implementation("org.eclipse.keypop:keypop-calypso-card-java-api:2.0.0-SNAPSHOT") {isChanging=true}
+    implementation("org.eclipse.keypop:keypop-reader-java-api:2.0.0")
+    implementation("org.eclipse.keypop:keypop-calypso-card-java-api:2.0.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.assertj:assertj-core:3.23.1")
 }
