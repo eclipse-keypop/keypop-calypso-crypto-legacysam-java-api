@@ -30,12 +30,26 @@ import org.eclipse.keypop.reader.CardReader;
 public interface LegacySamApiFactory {
 
   /**
-   * Returns a new instance of {@link LegacySamSelectionExtension}.
+   * Returns a new instance of {@link LegacySamSelectionExtension}. This method should be used when
+   * the selection of the SAM is straightforward and does not require special handling or
+   * configuration.
    *
    * @return A new instance of {@link LegacySamSelectionExtension}.
    * @since 0.3.0
    */
   LegacySamSelectionExtension createLegacySamSelectionExtension();
+
+  /**
+   * Returns a new instance of {@link LegacySamSelectionExtension}. This method should be used when
+   * unlocking the SAM requires communication with a SAM reader, typically in cases where additional
+   * security or configuration is necessary.
+   *
+   * @param samReader The reader to use to communicate with the SAM.
+   * @return A new instance of {@link LegacySamSelectionExtension}.
+   * @throws IllegalArgumentException If the argument is null.
+   * @since 0.4.0
+   */
+  LegacySamSelectionExtension createLegacySamSelectionExtension(CardReader samReader);
 
   /**
    * Returns a new instance of {@link SymmetricCryptoCardTransactionManagerFactory} to be used to

@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `LegacySamStaticUnlockDataProviderSpi` is an SPI to provide SAM unlock data in static mode.
+- `LegacySamDynamicUnlockDataProviderSpi` is an SPI to provide SAM unlock data in dynamic mode.
+- New methods added to `LegacySamSelectionExtension`:
+  - `setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi unlockDataProvider)` sets the unlock data provider
+  for the static mode.
+  - `setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi unlockDataProvider)` sets the unlock data 
+  provider for the dynamic mode.
+### Fixed
+- The allowed length for unlocking data in static mode is 16 bytes only as expected by the SAM (`setUnlockData` 
+methods).
 
 ## [0.3.0] - 2023-11-27
 :warning: The project has been migrated from the [Calypsonet Terminal Calypso Crypto Legacy SAM API](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api)
