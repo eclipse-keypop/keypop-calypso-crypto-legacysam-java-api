@@ -6,13 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `LegacySamStaticUnlockDataProviderSpi` is an SPI to provide SAM unlock data in static mode.
-- `LegacySamDynamicUnlockDataProviderSpi` is an SPI to provide SAM unlock data in dynamic mode.
+- `LegacySamStaticUnlockDataProviderSpi`, an SPI to provide SAM unlock data in static mode.
+- `LegacySamDynamicUnlockDataProviderSpi`, an SPI to provide SAM unlock data in dynamic mode.
 - New methods added to `LegacySamSelectionExtension`:
   - `setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi unlockDataProvider)` sets the unlock data provider
   for the static mode.
   - `setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi unlockDataProvider)` sets the unlock data 
   provider for the dynamic mode.
+  - `setSamCardReader(CardReader cardReader)` to allow the injection of a card reader to handle the unlocking commands.
+- New method added to `LegacySamApiFactory`:
+  - `createLegacySamSelectionExtension(CardReader samReader)` to create an extension able to handle advanced unlocking.
 ### Fixed
 - The allowed length for unlocking data in static mode is 16 bytes only as expected by the SAM (`setUnlockData` 
 methods).
