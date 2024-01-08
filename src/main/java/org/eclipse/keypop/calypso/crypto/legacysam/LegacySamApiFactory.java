@@ -31,8 +31,10 @@ public interface LegacySamApiFactory {
 
   /**
    * Returns a new instance of {@link LegacySamSelectionExtension}. This method should be used when
-   * the selection of the SAM is straightforward and does not require special handling or
-   * configuration.
+   * the SAM reader is dynamically allocated.
+   *
+   * <p>This method can be used when the SAM reader is statically allocated when no advanced
+   * unlocking process is required.
    *
    * @return A new instance of {@link LegacySamSelectionExtension}.
    * @since 0.3.0
@@ -41,8 +43,7 @@ public interface LegacySamApiFactory {
 
   /**
    * Returns a new instance of {@link LegacySamSelectionExtension}. This method should be used when
-   * unlocking the SAM requires communication with a SAM reader, typically in cases where additional
-   * security or configuration is necessary.
+   * the SAM reader is statically allocated.
    *
    * @param samReader The reader to use to communicate with the SAM.
    * @return A new instance of {@link LegacySamSelectionExtension}.
