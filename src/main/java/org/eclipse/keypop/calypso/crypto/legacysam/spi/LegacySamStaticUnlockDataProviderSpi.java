@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MIT
  ****************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.spi;
+
 /**
  * Service to be implemented in order to compute the static unlock data expected by the SAM.
  *
