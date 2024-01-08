@@ -32,13 +32,20 @@ import org.eclipse.keypop.reader.selection.spi.CardSelectionExtension;
  *       LegacySam.ProductType)}).
  *   <li>The application implements a {@link LegacySamStaticUnlockDataProviderSpi} used to compute
  *       the 16-byte value expected byte the SAM in static mode (may diversified with the SAM serial
- *       number) ({@link #setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi)}).
+ *       number) ({@link #setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi)} and
+ *       {@link #setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi, CardReader)}).
  *   <li>The application implements a {@link LegacySamDynamicUnlockDataProviderSpi} used to have the
  *       8-byte value expected by the SAM in dynamic mode computed by an origin SAM ({@link
- *       #setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi)}).
+ *       #setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi)} and {@link
+ *       #setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi, CardReader)}).
  * </ul>
  *
  * All three methods are exclusive.
+ *
+ * <p>When the unlocking data is supplied by a provider, a {@link CardReader} is needed to perform
+ * additional exchanges after the initial selection process. The reader can be provided either at
+ * the time of the creation of the selection extension or later depending on the implementation (in
+ * the case of dynamic SAM reader allocation for example).
  *
  * @since 0.3.0
  */
