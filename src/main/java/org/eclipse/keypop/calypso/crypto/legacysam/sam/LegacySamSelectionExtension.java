@@ -21,9 +21,8 @@ import org.eclipse.keypop.reader.selection.spi.CardSelectionExtension;
  * to define optional commands to be executed during the selection phase such as the "Unlock"
  * command.
  *
- * <p>An instance of this interface can be obtained by using either the {@link
- * LegacySamApiFactory#createLegacySamSelectionExtension()} method or the {@link
- * LegacySamApiFactory#createLegacySamSelectionExtension(CardReader)} method.
+ * <p>An instance of this interface can be obtained via the method {@link
+ * LegacySamApiFactory#createLegacySamSelectionExtension()}.
  *
  * <p>In the case where the SAM is locked, three options are proposed:
  *
@@ -79,40 +78,80 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
   /**
    * Sets the unlock data provider to use for unlocking the SAM in static mode.
    *
-   * <p>When using this method, a non-null SAM {@link CardReader} must be provided to the SAM
+   * <p>This method must be used when the card reader needed to communicate with the target SAM is
+   * provided at a later point within the interface's implementation process.
+   *
+   * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
+   * a request to the provider to obtain the needed unlocking data.
+   *
+   * @param staticUnlockDataProvider An implementation of {@link
+   *     LegacySamStaticUnlockDataProviderSpi}.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalStateException If an unlocking setting has already been set.
+   * @since 0.4.0
+   */
+  LegacySamSelectionExtension setStaticUnlockDataProvider(
+      LegacySamStaticUnlockDataProviderSpi staticUnlockDataProvider);
+
+  /**
+   * Sets the unlock data provider and the card reader to use for unlocking the SAM in static mode.
+   *
+   * <p>This method must be used when the card reader is known at the time of creating the SAM
    * selection extension.
    *
    * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
    * a request to the provider to obtain the needed unlocking data.
    *
-   * @param unlockDataProvider An implementation of {@link LegacySamStaticUnlockDataProviderSpi}.
+   * @param staticUnlockDataProvider An implementation of {@link
+   *     LegacySamStaticUnlockDataProviderSpi}.
+   * @param targetSamReader The card reader used to communicate with the target SAM.
    * @return The current instance.
-   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalArgumentException If one of the provided arguments is null.
    * @throws IllegalStateException If an unlocking setting has already been set.
-   * @see LegacySamApiFactory#createLegacySamSelectionExtension(CardReader)
    * @since 0.4.0
    */
   LegacySamSelectionExtension setStaticUnlockDataProvider(
-      LegacySamStaticUnlockDataProviderSpi unlockDataProvider);
+      LegacySamStaticUnlockDataProviderSpi staticUnlockDataProvider, CardReader targetSamReader);
 
   /**
    * Sets the unlock data provider to use for unlocking the SAM in dynamic mode.
    *
-   * <p>When using this method, a non-null SAM {@link CardReader} must be provided to the SAM
+   * <p>This method must be used when the card reader needed to communicate with the target SAM is
+   * provided at a later point within the interface's implementation process.
+   *
+   * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
+   * a request to the provider to obtain the needed unlocking data.
+   *
+   * @param dynamicUnlockDataProvider An implementation of {@link
+   *     LegacySamDynamicUnlockDataProviderSpi}.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalStateException If an unlocking setting has already been set.
+   * @since 0.4.0
+   */
+  LegacySamSelectionExtension setDynamicUnlockDataProvider(
+      LegacySamDynamicUnlockDataProviderSpi dynamicUnlockDataProvider);
+
+  /**
+   * Sets the unlock data provider and the card reader to use for unlocking the SAM in dynamic mode.
+   *
+   * <p>This method must be used when the card reader is known at the time of creating the SAM
    * selection extension.
    *
    * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
    * a request to the provider to obtain the needed unlocking data.
    *
-   * @param unlockDataProvider An implementation of {@link LegacySamDynamicUnlockDataProviderSpi}.
+   * @param dynamicUnlockDataProvider An implementation of {@link
+   *     LegacySamDynamicUnlockDataProviderSpi}.
+   * @param targetSamReader The card reader used to communicate with the target SAM.
    * @return The current instance.
-   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalArgumentException If one of the provided arguments is null.
    * @throws IllegalStateException If an unlocking setting has already been set.
-   * @see LegacySamApiFactory#createLegacySamSelectionExtension(CardReader)
    * @since 0.4.0
    */
   LegacySamSelectionExtension setDynamicUnlockDataProvider(
-      LegacySamDynamicUnlockDataProviderSpi unlockDataProvider);
+      LegacySamDynamicUnlockDataProviderSpi dynamicUnlockDataProvider, CardReader targetSamReader);
 
   /**
    * Schedules the execution of a "Read Key Parameters" command for a system key.

@@ -10,14 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `LegacySamDynamicUnlockDataProviderSpi`, an SPI to provide SAM unlock data in dynamic mode.
 - New methods added to `LegacySamSelectionExtension`:
   - `setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi unlockDataProvider)` sets the unlock data provider
-  for the static mode.
+  for the static mode when the card reader is lately available.
+  - `setStaticUnlockDataProvider(LegacySamStaticUnlockDataProviderSpi unlockDataProvider, CardReader targetSamReader)` 
+  sets the unlock data provider and the target SAM reader for the static mode when the card reader is early available.
   - `setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi unlockDataProvider)` sets the unlock data 
-  provider for the dynamic mode.
-- New method added to `LegacySamApiFactory`:
-  - `createLegacySamSelectionExtension(CardReader samReader)` to create an extension able to handle advanced unlocking.
+  provider for the dynamic mode when the card reader is lately available.
+  - `setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi unlockDataProvider, CardReader targetSamReader)` 
+  sets the unlock data provider and the target SAM reader for the dynamic mode when the card reader is early available.
 ### Fixed
-- The allowed length for unlocking data in static mode is 16 bytes only as expected by the SAM (`setUnlockData` 
-methods).
+- The allowed length for unlocking data in static mode is 16 bytes only as expected by the SAM (`setUnlockData` method).
 
 ## [0.3.0] - 2023-11-27
 :warning: The project has been migrated from the [Calypsonet Terminal Calypso Crypto Legacy SAM API](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api)

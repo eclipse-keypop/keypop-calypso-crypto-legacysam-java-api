@@ -30,27 +30,12 @@ import org.eclipse.keypop.reader.CardReader;
 public interface LegacySamApiFactory {
 
   /**
-   * Returns a new instance of {@link LegacySamSelectionExtension}. This method should be used when
-   * the SAM reader is dynamically allocated.
-   *
-   * <p>This method can be used when the SAM reader is statically allocated when no advanced
-   * unlocking process is required.
+   * Returns a new instance of {@link LegacySamSelectionExtension}.
    *
    * @return A new instance of {@link LegacySamSelectionExtension}.
    * @since 0.3.0
    */
   LegacySamSelectionExtension createLegacySamSelectionExtension();
-
-  /**
-   * Returns a new instance of {@link LegacySamSelectionExtension}. This method should be used when
-   * the SAM reader is statically allocated.
-   *
-   * @param samReader The reader to use to communicate with the SAM.
-   * @return A new instance of {@link LegacySamSelectionExtension}.
-   * @throws IllegalArgumentException If the argument is null.
-   * @since 0.4.0
-   */
-  LegacySamSelectionExtension createLegacySamSelectionExtension(CardReader samReader);
 
   /**
    * Returns a new instance of {@link SymmetricCryptoCardTransactionManagerFactory} to be used to
