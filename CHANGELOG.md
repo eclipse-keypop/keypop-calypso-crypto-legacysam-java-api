@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   for the static mode.
   - `setDynamicUnlockDataProvider(LegacySamDynamicUnlockDataProviderSpi unlockDataProvider)` sets the unlock data 
   provider for the dynamic mode.
-  - `setSamCardReader(CardReader cardReader)` to allow the injection of a card reader to handle the unlocking commands.
 - New method added to `LegacySamApiFactory`:
   - `createLegacySamSelectionExtension(CardReader samReader)` to create an extension able to handle advanced unlocking.
 ### Fixed

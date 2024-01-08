@@ -90,7 +90,6 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @throws IllegalArgumentException If the provided argument is null.
    * @throws IllegalStateException If an unlocking setting has already been set.
    * @see LegacySamApiFactory#createLegacySamSelectionExtension(CardReader)
-   * @see #setSamCardReader(CardReader)
    * @since 0.4.0
    */
   LegacySamSelectionExtension setStaticUnlockDataProvider(
@@ -110,22 +109,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @throws IllegalArgumentException If the provided argument is null.
    * @throws IllegalStateException If an unlocking setting has already been set.
    * @see LegacySamApiFactory#createLegacySamSelectionExtension(CardReader)
-   * @see #setSamCardReader(CardReader)
    * @since 0.4.0
    */
   LegacySamSelectionExtension setDynamicUnlockDataProvider(
       LegacySamDynamicUnlockDataProviderSpi unlockDataProvider);
-
-  /**
-   * Provides the {@link CardReader} for communicating with the SAM during the unlocking process
-   * when involving a static or a dynamic unlock data providers.
-   *
-   * @param cardReader The card reader to be used.
-   * @return The current instance.
-   * @throws IllegalArgumentException If the provided argument is null.
-   * @since 0.4.0
-   */
-  LegacySamSelectionExtension setSamCardReader(CardReader cardReader);
 
   /**
    * Schedules the execution of a "Read Key Parameters" command for a system key.
