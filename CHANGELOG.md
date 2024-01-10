@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.4.0] - 2024-01-10
 ### Added
 - `LegacySamStaticUnlockDataProviderSpi`, an SPI to provide SAM unlock data in static mode.
 - `LegacySamDynamicUnlockDataProviderSpi`, an SPI to provide SAM unlock data in dynamic mode.
@@ -104,7 +106,8 @@ GitHub repository.
 - APIs of the SAM image and SAM selection.
 - APIs related to signature computation and verification as well as counter and ceiling reading.
   
-[unreleased]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.3.0...HEAD
+[unreleased]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/releases/tag/0.3.0
 [0.2.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/releases/tag/0.1.0
