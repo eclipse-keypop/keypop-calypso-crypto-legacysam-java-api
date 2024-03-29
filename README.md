@@ -9,7 +9,7 @@ a transaction with a Calypso legacy SAM (SAM C1, HSM, etc.) and also to manage s
 ## Documentation & Contribution Guide
 
 The full documentation, including the **user guide**, **download information** and **contribution guide**, is available
-on the Keyple website [keypop.org](https://eclipse-keypop.github.io/keypop-website/).
+on the Keypop website [keypop.org](https://eclipse-keypop.github.io/keypop-website/).
 
 ## API documentation
 

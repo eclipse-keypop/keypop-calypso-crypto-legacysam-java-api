@@ -9,6 +9,7 @@
  ****************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
+import org.eclipse.keypop.calypso.crypto.legacysam.GetDataTag;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 import org.eclipse.keypop.reader.CardReader;
 
@@ -22,6 +23,45 @@ import org.eclipse.keypop.reader.CardReader;
  * @since 0.1.0
  */
 public interface FreeTransactionManager extends ReadTransactionManager<FreeTransactionManager> {
+
+  /**
+   * Schedules the execution of a "Get Data" command for the specified tag.
+   *
+   * <p>Once this command is processed, data is accessible using dedicated getter methods, like
+   * {@link LegacySam#getCaCertificate()}.
+   *
+   * @param tag The tag to retrieve the data for.
+   * @return The current instance.
+   * @since 0.5.0
+   */
+  FreeTransactionManager prepareGetTag(GetDataTag tag);
+
+  /**
+   * Schedules the execution of "Card Generate Asymmetric Key Pair" command.
+   *
+   * <p>Once this command is processed, the key pair data will be available in the provided output
+   * {@link KeyPairContainer} objects.
+   *
+   * @param keyPairContainer The container for the output data.
+   * @return The current instance.
+   * @see KeyPairContainer
+   * @since 0.5.0
+   */
+  FreeTransactionManager prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer);
+
+  /**
+   * Schedules the execution of a "PSO Compute Certificate" command.
+   *
+   * <p>Once the command is processed, the result will be available in the provided input/output
+   * {@link CardCertificateComputationData} object.
+   *
+   * @param data The input/output data containing the parameters of the command.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the input data is inconsistent.
+   * @see CardCertificateComputationData
+   * @since 0.5.0
+   */
+  FreeTransactionManager prepareComputeCardCertificate(CardCertificateComputationData data);
 
   /**
    * Schedules the execution of a "Data Cipher" or "PSO Compute Signature" command.

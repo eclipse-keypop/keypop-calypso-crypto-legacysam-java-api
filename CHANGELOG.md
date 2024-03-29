@@ -5,6 +5,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `GetDataTag` to enumerate all output data types.
+- `KeyPairContainer` interface to contain a key pair.
+- `CardCertificateComputationData` interface to contain input/output data for the "PSO Compute Certificated" command.
+- New methods added to `FreeTransactionManager`:
+  - `prepareGetTag(GetDataTag tag)` in `FreeTransactionManager` to schedule the execution of a "Get Data" command for
+    the specified tag.
+  - `prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer)` to schedule the execution of "Card
+    Generate Asymmetric Key Pair" command.
+  - `prepareComputeCardCertificate(CardCertificateComputationData data)` to schedule the execution of a "PSO Compute
+    Certificate" command.
+- New methods added to `LegacySamApiFactory`:
+  - `createKeyPairContainer()` to create a new instance of `KeyPairContainer`.
+  - `createCardCertificateComputationData()` to create a new instance of `CardCertificateComputationData`.
+- New method added to `LegacySam`:
+  - `getCaCertificate()` to get the CA certificate retrieved from the SAM as a 384-byte byte array.
+### Changed
+- Updated the Keypop website URL in the README.md file.
 
 ## [0.4.0] - 2024-01-10
 ### Added

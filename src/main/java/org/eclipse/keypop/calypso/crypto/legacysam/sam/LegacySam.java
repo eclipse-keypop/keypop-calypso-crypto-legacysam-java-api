@@ -155,6 +155,14 @@ public interface LegacySam extends SmartCard {
   KeyParameter getSystemKeyParameter(SystemKeyType systemKeyType);
 
   /**
+   * Gets the CA certificate retrieved from the SAM as a 384-byte byte array.
+   *
+   * @return null if the CA certificate is not available.
+   * @since 0.5.0
+   */
+  byte[] getCaCertificate();
+
+  /**
    * All Calypso SAM products supported by this API.
    *
    * @since 0.1.0

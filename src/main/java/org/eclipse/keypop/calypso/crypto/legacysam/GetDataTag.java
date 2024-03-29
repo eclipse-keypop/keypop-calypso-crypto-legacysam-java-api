@@ -10,19 +10,20 @@
 package org.eclipse.keypop.calypso.crypto.legacysam;
 
 /**
- * API properties.
+ * Enumeration of all output data types.
  *
- * @since 0.1.0
+ * <p>May not be applicable to all products.
+ *
+ * @since 0.5.0
  */
-public final class LegacySamApiProperties {
+public enum GetDataTag {
 
   /**
-   * API version: {@value}
+   * CA Certificate (CACert)
    *
-   * @since 0.1.0
+   * <p>CACert may be unavailable.
+   *
+   * @since 0.5.0
    */
-  public static final String VERSION = "0.5";
-
-  /** Private constructor */
-  private LegacySamApiProperties() {}
+  CA_CERTIFICATE
 }
