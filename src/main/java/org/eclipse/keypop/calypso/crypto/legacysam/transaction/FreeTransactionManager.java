@@ -32,6 +32,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * @param tag The tag to retrieve the data for.
    * @return The current instance.
+   * @throws IllegalArgumentException If tag is null.
    * @since 0.5.0
    */
   FreeTransactionManager prepareGetTag(GetDataTag tag);
@@ -44,6 +45,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * @param keyPairContainer The container for the output data.
    * @return The current instance.
+   * @throws IllegalArgumentException If keyPairContainer is null.
    * @see KeyPairContainer
    * @since 0.5.0
    */
@@ -57,7 +59,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
-   * @throws IllegalArgumentException If the input data is inconsistent.
+   * @throws IllegalArgumentException If data is null.
    * @see CardCertificateComputationData
    * @since 0.5.0
    */
