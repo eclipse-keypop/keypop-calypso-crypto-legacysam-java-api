@@ -11,7 +11,9 @@ package org.eclipse.keypop.calypso.crypto.legacysam.sam;
 
 import java.util.SortedMap;
 import org.eclipse.keypop.calypso.crypto.legacysam.CounterIncrementAccess;
+import org.eclipse.keypop.calypso.crypto.legacysam.GetDataTag;
 import org.eclipse.keypop.calypso.crypto.legacysam.SystemKeyType;
+import org.eclipse.keypop.calypso.crypto.legacysam.transaction.FreeTransactionManager;
 import org.eclipse.keypop.reader.selection.spi.SmartCard;
 
 /**
@@ -153,6 +155,15 @@ public interface LegacySam extends SmartCard {
    * @since 0.2.0
    */
   KeyParameter getSystemKeyParameter(SystemKeyType systemKeyType);
+
+  /**
+   * Gets the CA certificate retrieved from the SAM as a 384-byte byte array.
+   *
+   * @return null if the CA certificate is not available.
+   * @see FreeTransactionManager#prepareGetData(GetDataTag)
+   * @since 0.5.0
+   */
+  byte[] getCaCertificate();
 
   /**
    * All Calypso SAM products supported by this API.

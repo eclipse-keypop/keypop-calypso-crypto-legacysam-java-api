@@ -12,14 +12,7 @@ package org.eclipse.keypop.calypso.crypto.legacysam;
 import org.eclipse.keypop.calypso.card.transaction.spi.SymmetricCryptoCardTransactionManagerFactory;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySamSelectionExtension;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.AsyncTransactionCreatorManager;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.AsyncTransactionExecutorManager;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.BasicSignatureComputationData;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.BasicSignatureVerificationData;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.FreeTransactionManager;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.SecuritySetting;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.TraceableSignatureComputationData;
-import org.eclipse.keypop.calypso.crypto.legacysam.transaction.TraceableSignatureVerificationData;
+import org.eclipse.keypop.calypso.crypto.legacysam.transaction.*;
 import org.eclipse.keypop.reader.CardReader;
 
 /**
@@ -99,6 +92,22 @@ public interface LegacySamApiFactory {
    */
   AsyncTransactionExecutorManager createAsyncTransactionExecutorManager(
       CardReader samReader, LegacySam sam, String samCommands);
+
+  /**
+   * Returns a new instance of {@link KeyPairContainer}.
+   *
+   * @return A new instance of {@link KeyPairContainer}.
+   * @since 0.5.0
+   */
+  KeyPairContainer createKeyPairContainer();
+
+  /**
+   * Returns a new instance of {@link CardCertificateComputationData}.
+   *
+   * @return A new instance of {@link CardCertificateComputationData}.
+   * @since 0.5.0
+   */
+  CardCertificateComputationData createCardCertificateComputationData();
 
   /**
    * Returns a new instance of {@link BasicSignatureComputationData}.

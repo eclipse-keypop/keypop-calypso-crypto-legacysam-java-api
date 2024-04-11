@@ -9,6 +9,8 @@
  ****************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
+import org.eclipse.keypop.calypso.crypto.legacysam.GetDataTag;
+import org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 import org.eclipse.keypop.reader.CardReader;
 
@@ -22,6 +24,49 @@ import org.eclipse.keypop.reader.CardReader;
  * @since 0.1.0
  */
 public interface FreeTransactionManager extends ReadTransactionManager<FreeTransactionManager> {
+
+  /**
+   * Schedules the execution of a "Get Data" command for the specified tag.
+   *
+   * <p>Once this command is processed, data is accessible using dedicated getter methods, like
+   * {@link LegacySam#getCaCertificate()}.
+   *
+   * @param tag The tag to retrieve the data for.
+   * @return The current instance.
+   * @throws IllegalArgumentException If tag is null.
+   * @since 0.5.0
+   */
+  FreeTransactionManager prepareGetData(GetDataTag tag);
+
+  /**
+   * Schedules the execution of "Card Generate Asymmetric Key Pair" command.
+   *
+   * <p>Once this command is processed, the key pair data will be available in the provided output
+   * {@link KeyPairContainer} objects.
+   *
+   * @param keyPairContainer The container for the output data.
+   * @return The current instance.
+   * @throws IllegalArgumentException If keyPairContainer is null.
+   * @see KeyPairContainer
+   * @see LegacySamApiFactory#createKeyPairContainer()
+   * @since 0.5.0
+   */
+  FreeTransactionManager prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer);
+
+  /**
+   * Schedules the execution of a "PSO Compute Certificate" command.
+   *
+   * <p>Once the command is processed, the result will be available in the provided input/output
+   * {@link CardCertificateComputationData} object.
+   *
+   * @param data The input/output data containing the parameters of the command.
+   * @return The current instance.
+   * @throws IllegalArgumentException If data is null.
+   * @see CardCertificateComputationData
+   * @see LegacySamApiFactory#createCardCertificateComputationData()
+   * @since 0.5.0
+   */
+  FreeTransactionManager prepareComputeCardCertificate(CardCertificateComputationData data);
 
   /**
    * Schedules the execution of a "Data Cipher" or "PSO Compute Signature" command.
@@ -49,6 +94,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @see SignatureComputationData
    * @see BasicSignatureComputationData
    * @see TraceableSignatureComputationData
+   * @see LegacySamApiFactory#createBasicSignatureComputationData()
    * @since 0.1.0
    */
   FreeTransactionManager prepareComputeSignature(SignatureComputationData<?> data);
@@ -68,6 +114,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @see SignatureVerificationData
    * @see BasicSignatureVerificationData
    * @see TraceableSignatureVerificationData
+   * @see LegacySamApiFactory#createBasicSignatureVerificationData()
    * @since 0.1.0
    */
   FreeTransactionManager prepareVerifySignature(SignatureVerificationData<?> data);
@@ -78,8 +125,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * <p>The exported target SAM context must be provided when creating an {@link
    * AsyncTransactionCreatorManager} with the method {@link
-   * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createAsyncTransactionCreatorManager(String,
-   * SecuritySetting)}.
+   * LegacySamApiFactory#createAsyncTransactionCreatorManager(String, SecuritySetting)}.
    *
    * @return A not empty string containing the context.
    * @since 0.2.0

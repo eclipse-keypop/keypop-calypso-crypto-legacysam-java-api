@@ -5,6 +5,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Java source and target levels `1.6` -> `1.8`
+### Upgraded
+- Gradle `6.8.3` -> `7.6.4`
+### Added
+- `GetDataTag` to enumerate all output data types.
+- `KeyPairContainer` interface to contain a key pair.
+- `CardCertificateComputationData` interface to contain input/output data for the "PSO Compute Certificate" command.
+- New methods added to `FreeTransactionManager`:
+  - `prepareGetData(GetDataTag tag)` to schedule the execution of a "Get Data" command for
+    the specified tag.
+  - `prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer)` to schedule the execution of "Card
+    Generate Asymmetric Key Pair" command.
+  - `prepareComputeCardCertificate(CardCertificateComputationData data)` to schedule the execution of a "PSO Compute
+    Certificate" command.
+- New methods added to `LegacySamApiFactory`:
+  - `createKeyPairContainer()` to create a new instance of `KeyPairContainer`.
+  - `createCardCertificateComputationData()` to create a new instance of `CardCertificateComputationData`.
+- New method added to `LegacySam`:
+  - `getCaCertificate()` to get the CA certificate retrieved from the SAM as a 384-byte byte array.
 
 ## [0.4.0] - 2024-01-10
 ### Added
