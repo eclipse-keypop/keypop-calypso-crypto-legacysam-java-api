@@ -35,7 +35,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @throws IllegalArgumentException If tag is null.
    * @since 0.5.0
    */
-  FreeTransactionManager prepareGetTag(GetDataTag tag);
+  FreeTransactionManager prepareGetData(GetDataTag tag);
 
   /**
    * Schedules the execution of "Card Generate Asymmetric Key Pair" command.

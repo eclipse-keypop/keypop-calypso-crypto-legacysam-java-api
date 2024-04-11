@@ -12,9 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `GetDataTag` to enumerate all output data types.
 - `KeyPairContainer` interface to contain a key pair.
-- `CardCertificateComputationData` interface to contain input/output data for the "PSO Compute Certificated" command.
+- `CardCertificateComputationData` interface to contain input/output data for the "PSO Compute Certificate" command.
 - New methods added to `FreeTransactionManager`:
-  - `prepareGetTag(GetDataTag tag)` in `FreeTransactionManager` to schedule the execution of a "Get Data" command for
+  - `prepareGetData(GetDataTag tag)` to schedule the execution of a "Get Data" command for
     the specified tag.
   - `prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer)` to schedule the execution of "Card
     Generate Asymmetric Key Pair" command.
