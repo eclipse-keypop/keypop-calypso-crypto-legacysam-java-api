@@ -9,6 +9,8 @@
  ****************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
+import java.time.LocalDate;
+
 /**
  * Contains the input/output data of the {@link
  * FreeTransactionManager#prepareComputeCardCertificate(CardCertificateComputationData)} method.
@@ -34,38 +36,28 @@ public interface CardCertificateComputationData {
   /**
    * Sets the start date of the validity period of the certificate's public key.
    *
-   * <p>No consistency test is performed on the values supplied, as they will be coded in BCD
-   * YYYYMMDD format in the certificate.
-   *
    * <p>The start date is optional. If it is not defined, the certificate is not subject to a start
    * date constraint.
    *
-   * @param year The year of the start date (0-9999).
-   * @param month The month of the start date (1-99).
-   * @param day The day of the start date (1-99).
+   * @param startDate The start date.
    * @return The current instance.
-   * @throws IllegalArgumentException If any date parameter is out of range.
+   * @throws IllegalArgumentException If date is null.
    * @since 0.5.0
    */
-  CardCertificateComputationData setStartDate(int year, int month, int day);
+  CardCertificateComputationData setStartDate(LocalDate startDate);
 
   /**
    * Sets the end date of the validity period of the certificate's public key.
    *
-   * <p>No consistency test is performed on the values supplied, as they will be coded in BCD
-   * YYYYMMDD format in the certificate.
-   *
    * <p>The end date is optional. If it is not defined, the certificate is not subject to an end
    * date constraint.
    *
-   * @param year The year of the start date (0-9999).
-   * @param month The month of the start date (1-99).
-   * @param day The day of the start date (1-99).
+   * @param endDate The end date.
    * @return The current instance.
-   * @throws IllegalArgumentException If any date parameter is out of range.
+   * @throws IllegalArgumentException If date is null.
    * @since 0.5.0
    */
-  CardCertificateComputationData setEndDate(int year, int month, int day);
+  CardCertificateComputationData setEndDate(LocalDate endDate);
 
   /**
    * Sets the AID of the autonomous PKI application of the target card.
