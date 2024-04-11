@@ -10,6 +10,7 @@
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
 import org.eclipse.keypop.calypso.crypto.legacysam.GetDataTag;
+import org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory;
 import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 import org.eclipse.keypop.reader.CardReader;
 
@@ -47,6 +48,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @return The current instance.
    * @throws IllegalArgumentException If keyPairContainer is null.
    * @see KeyPairContainer
+   * @see LegacySamApiFactory#createKeyPairContainer()
    * @since 0.5.0
    */
   FreeTransactionManager prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer);
@@ -61,6 +63,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @return The current instance.
    * @throws IllegalArgumentException If data is null.
    * @see CardCertificateComputationData
+   * @see LegacySamApiFactory#createCardCertificateComputationData()
    * @since 0.5.0
    */
   FreeTransactionManager prepareComputeCardCertificate(CardCertificateComputationData data);
@@ -91,6 +94,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @see SignatureComputationData
    * @see BasicSignatureComputationData
    * @see TraceableSignatureComputationData
+   * @see LegacySamApiFactory#createBasicSignatureComputationData()
    * @since 0.1.0
    */
   FreeTransactionManager prepareComputeSignature(SignatureComputationData<?> data);
@@ -110,6 +114,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * @see SignatureVerificationData
    * @see BasicSignatureVerificationData
    * @see TraceableSignatureVerificationData
+   * @see LegacySamApiFactory#createBasicSignatureVerificationData()
    * @since 0.1.0
    */
   FreeTransactionManager prepareVerifySignature(SignatureVerificationData<?> data);
@@ -120,8 +125,7 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * <p>The exported target SAM context must be provided when creating an {@link
    * AsyncTransactionCreatorManager} with the method {@link
-   * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createAsyncTransactionCreatorManager(String,
-   * SecuritySetting)}.
+   * LegacySamApiFactory#createAsyncTransactionCreatorManager(String, SecuritySetting)}.
    *
    * @return A not empty string containing the context.
    * @since 0.2.0
