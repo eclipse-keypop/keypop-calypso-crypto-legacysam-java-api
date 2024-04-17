@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.6.0] - 2024-04-17
 ### Added
 - New method added to `LegacySamSelectionExtension`:
   - `prepareGetData(GetDataTag tag)` to schedule the execution of a "Get Data" command for
@@ -134,7 +136,8 @@ GitHub repository.
 - APIs of the SAM image and SAM selection.
 - APIs related to signature computation and verification as well as counter and ceiling reading.
   
-[unreleased]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.5.0...HEAD
+[unreleased]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/releases/tag/0.3.0
