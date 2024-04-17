@@ -207,7 +207,7 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @param tag The tag to retrieve the data for.
    * @return The current instance.
    * @throws IllegalArgumentException If tag is null.
-   * @since 0.5.0
+   * @since 0.6.0
    */
   LegacySamSelectionExtension prepareGetData(GetDataTag tag);
 }
