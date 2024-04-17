@@ -102,12 +102,12 @@ public interface LegacySamApiFactory {
   KeyPairContainer createKeyPairContainer();
 
   /**
-   * Returns a new instance of {@link CardCertificateComputationData}.
+   * Returns a new instance of {@link LegacyCardCertificateComputationData}.
    *
-   * @return A new instance of {@link CardCertificateComputationData}.
+   * @return A new instance of {@link LegacyCardCertificateComputationData}.
    * @since 0.5.0
    */
-  CardCertificateComputationData createCardCertificateComputationData();
+  LegacyCardCertificateComputationData createLegacyCardCertificateComputationData();
 
   /**
    * Returns a new instance of {@link BasicSignatureComputationData}.
