@@ -57,16 +57,16 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * Schedules the execution of a "PSO Compute Certificate" command.
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
-   * {@link CardCertificateComputationData} object.
+   * {@link LegacyCardCertificateComputationData} object.
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If data is null.
-   * @see CardCertificateComputationData
-   * @see LegacySamApiFactory#createCardCertificateComputationData()
+   * @see LegacyCardCertificateComputationData
+   * @see LegacySamApiFactory#createLegacyCardCertificateComputationData()
    * @since 0.5.0
    */
-  FreeTransactionManager prepareComputeCardCertificate(CardCertificateComputationData data);
+  FreeTransactionManager prepareComputeCardCertificate(LegacyCardCertificateComputationData data);
 
   /**
    * Schedules the execution of a "Data Cipher" or "PSO Compute Signature" command.

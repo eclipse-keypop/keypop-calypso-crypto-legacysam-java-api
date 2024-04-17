@@ -9,6 +9,7 @@
  ****************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.sam;
 
+import org.eclipse.keypop.calypso.crypto.legacysam.GetDataTag;
 import org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory;
 import org.eclipse.keypop.calypso.crypto.legacysam.SystemKeyType;
 import org.eclipse.keypop.calypso.crypto.legacysam.spi.LegacySamDynamicUnlockDataProviderSpi;
@@ -196,4 +197,17 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @since 0.3.0
    */
   LegacySamSelectionExtension prepareReadAllCountersStatus();
+
+  /**
+   * Schedules the execution of a "Get Data" command for the specified tag.
+   *
+   * <p>Once this command is processed, data is accessible using dedicated getter methods, like
+   * {@link LegacySam#getCaCertificate()}.
+   *
+   * @param tag The tag to retrieve the data for.
+   * @return The current instance.
+   * @throws IllegalArgumentException If tag is null.
+   * @since 0.6.0
+   */
+  LegacySamSelectionExtension prepareGetData(GetDataTag tag);
 }
