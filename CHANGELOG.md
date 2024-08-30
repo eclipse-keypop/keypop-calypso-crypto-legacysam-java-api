@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- New interface `SamParameters` to contains the SAM parameters.
+- New method added to `LegacySam`:
+    - `getSamParameters()` to retrieve the parameters read from the SAM.
+    - `getWorkKeyParameter(int recordNumber)` to retrieve a read work key from its record number.
+    - `getWorkKeyParameter(byte kif, byte kvc)` to retrieve a read work key from its KIF and KVC.
+- New method added to `ReadTransactionManager`:
+    - `prepareReadSamParameters()` to schedule the execution of "Read Parameters" command.
+    - `prepareReadWorkKeyParameters(int recordNumber)` to schedule the execution of "Read Key Parameters" command.
+    - `prepareReadWorkKeyParameters(byte kif, byte kvc)` to schedule the execution of "Read Key Parameters" command.
+- New interface added `SecureWriteTransactionManager`:
+    - `prepareWriteSamParameters(byte[] parameters)` to schedule the execution of "Write Parameters" command.
+    - `prepareTransferSystemKey(SystemKeyType systemKeyType, byte[] systemKeyParameters)` to schedule the execution of "
+      Write Key" command.
+    - `prepareTransferWorkKey(byte kif, byte kvc, byte[] workKeyParameters, int recordNumber)` to schedule the execution
+      of "Write Key" command.
+
 ## [0.6.0] - 2024-04-17
 ### Added
 - New method added to `LegacySamSelectionExtension`:

@@ -162,6 +162,17 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
       LegacySamDynamicUnlockDataProviderSpi dynamicUnlockDataProvider, CardReader targetSamReader);
 
   /**
+   * Schedules the execution of a "Read Parameters" command for the SAM.
+   *
+   * <p>Once this command is processed, the result is accessible with {@link
+   * LegacySam#getSamParameters()}.
+   *
+   * @return The current instance.
+   * @since 0.7.0
+   */
+  LegacySamSelectionExtension prepareReadSamParameters();
+
+  /**
    * Schedules the execution of a "Read Key Parameters" command for a system key.
    *
    * <p>Once this command is processed, the result is accessible with {@link
@@ -173,6 +184,34 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @since 0.3.0
    */
   LegacySamSelectionExtension prepareReadSystemKeyParameters(SystemKeyType systemKeyType);
+
+  /**
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its
+   * record number.
+   *
+   * <p>Once this command is processed, the result is accessible with {@link
+   * LegacySam#getWorkKeyParameter(int)}.
+   *
+   * @param recordNumber The key record number (in range [1..126]).
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided record number is out of range.
+   * @since 0.7.0
+   */
+  LegacySamSelectionExtension prepareReadWorkKeyParameters(int recordNumber);
+
+  /**
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF
+   * and KVC.
+   *
+   * <p>Once this command is processed, the result is accessible with {@link
+   * LegacySam#getWorkKeyParameter(byte, byte)}.
+   *
+   * @param kif The key KIF.
+   * @param kvc The key KVC.
+   * @return The current instance.
+   * @since 0.7.0
+   */
+  LegacySamSelectionExtension prepareReadWorkKeyParameters(byte kif, byte kvc);
 
   /**
    * Schedules the execution of a "Read Event Counter" and "Read Ceiling" commands to read the
