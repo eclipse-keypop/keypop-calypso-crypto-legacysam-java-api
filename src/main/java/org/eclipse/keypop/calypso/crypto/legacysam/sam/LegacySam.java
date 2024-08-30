@@ -148,15 +148,6 @@ public interface LegacySam extends SmartCard {
   SortedMap<Integer, Integer> getCounterCeilings();
 
   /**
-   * Returns the parameters of the system key whose type is provided.
-   *
-   * @param systemKeyType The type of system key.
-   * @return Null if there is no parameter available for the specified key type.
-   * @since 0.2.0
-   */
-  KeyParameter getSystemKeyParameter(SystemKeyType systemKeyType);
-
-  /**
    * Gets the CA certificate retrieved from the SAM as a 384-byte byte array.
    *
    * @return null if the CA certificate is not available.
@@ -164,6 +155,45 @@ public interface LegacySam extends SmartCard {
    * @since 0.5.0
    */
   byte[] getCaCertificate();
+
+  /**
+   * Gets the SAM parameters retrieved from the SAM.
+   *
+   * @return null if the SAM parameters are not available.
+   * @see LegacySamSelectionExtension#prepareReadSamParameters()
+   * @since 0.7.0
+   */
+  byte[] getSamParameters();
+
+  /**
+   * Returns the parameters of the system key for the specified key type.
+   *
+   * @param systemKeyType The type of system key.
+   * @return Null if there is no parameter available for the specified key type.
+   * @throws IllegalArgumentException If the provided argument is null.
+   * @since 0.2.0
+   */
+  KeyParameter getSystemKeyParameter(SystemKeyType systemKeyType);
+
+  /**
+   * Returns the parameters of the work key for which the record number provided.
+   *
+   * @param recordNumber The key record number (between 1 and 126).
+   * @return Null if there is no parameter available for the specified key record number.
+   * @throws IllegalArgumentException If the provided record number is out of range.
+   * @since 0.7.0
+   */
+  KeyParameter getWorkKeyParameter(int recordNumber);
+
+  /**
+   * Returns the parameters of the work key for which the KIF and KVC are provided..
+   *
+   * @param kif The key KIF.
+   * @param kvc The key KIF.
+   * @return Null if there is no parameter available for the specified KIF/KVC.
+   * @since 0.7.0
+   */
+  KeyParameter getWorkKeyParameter(byte kif, byte kvc);
 
   /**
    * All Calypso SAM products supported by this API.
