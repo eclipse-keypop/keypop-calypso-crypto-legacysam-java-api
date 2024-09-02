@@ -163,7 +163,7 @@ public interface LegacySam extends SmartCard {
    * @see LegacySamSelectionExtension#prepareReadSamParameters()
    * @since 0.7.0
    */
-  byte[] getSamParameters();
+  SamParameters getSamParameters();
 
   /**
    * Returns the parameters of the system key for the specified key type.
