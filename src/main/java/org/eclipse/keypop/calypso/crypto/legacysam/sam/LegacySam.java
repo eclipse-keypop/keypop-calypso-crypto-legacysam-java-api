@@ -176,7 +176,7 @@ public interface LegacySam extends SmartCard {
   KeyParameter getSystemKeyParameter(SystemKeyType systemKeyType);
 
   /**
-   * Returns the parameters of the work key for which the record number provided.
+   * Returns the parameters of the work key referenced by its record number.
    *
    * @param recordNumber The key record number (between 1 and 126).
    * @return Null if there is no parameter available for the specified key record number.
@@ -186,7 +186,7 @@ public interface LegacySam extends SmartCard {
   KeyParameter getWorkKeyParameter(int recordNumber);
 
   /**
-   * Returns the parameters of the work key for which the KIF and KVC are provided..
+   * Returns the parameters of the work key referenced by its KIF and KVC.
    *
    * @param kif The key KIF.
    * @param kvc The key KIF.

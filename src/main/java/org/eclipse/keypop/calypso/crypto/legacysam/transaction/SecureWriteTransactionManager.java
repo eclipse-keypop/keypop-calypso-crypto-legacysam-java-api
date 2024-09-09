@@ -37,7 +37,7 @@ public interface SecureWriteTransactionManager
    *
    * @param systemKeyType The type of system key.
    * @param systemKeyParameters A 29-byte byte array containing the key parameter data.
-   * @throws IllegalArgumentException If the provided argument is null or out of range.
+   * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @return The current instance.
    * @since 0.7.0
    */
@@ -52,7 +52,7 @@ public interface SecureWriteTransactionManager
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
    * @param recordNumber The number of record where to store the key.
-   * @throws IllegalArgumentException If the provided argument is null or out of range.
+   * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @return The current instance.
    * @since 0.7.0
    */

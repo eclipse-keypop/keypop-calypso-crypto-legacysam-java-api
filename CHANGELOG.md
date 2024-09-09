@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `prepareReadSamParameters()` to schedule the execution of "Read Parameters" command.
     - `prepareReadWorkKeyParameters(int recordNumber)` to schedule the execution of "Read Key Parameters" command.
     - `prepareReadWorkKeyParameters(byte kif, byte kvc)` to schedule the execution of "Read Key Parameters" command.
-- New class added `SecureWriteTransactionManager`:
+- New interface added `SecureWriteTransactionManager`:
     - `prepareWriteSamParameters(byte[] parameters)` to schedule the execution of "Write Parameters" command.
     - `prepareTransferSystemKey(SystemKeyType systemKeyType, byte[] systemKeyParameters)` to schedule the execution of "
       Write Key" command.
