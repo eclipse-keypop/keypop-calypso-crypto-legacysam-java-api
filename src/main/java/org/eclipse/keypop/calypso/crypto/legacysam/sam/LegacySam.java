@@ -192,7 +192,7 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the parameters of the work key referenced by its record number.
    *
-   * @param recordNumber The key record number (between 1 and 126).
+   * @param recordNumber The key record number (in range [1..126]).
    * @return Null if there is no parameter available for the specified key record number.
    * @throws IllegalArgumentException If the provided record number is out of range.
    * @see LegacySamSelectionExtension#prepareReadWorkKeyParameters(int)

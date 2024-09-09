@@ -46,13 +46,12 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
   T prepareReadSystemKeyParameters(SystemKeyType systemKeyType);
 
   /**
-   * Schedules the execution of a "Read Key Parameters" command for a work key for which the record
-   * number provided.
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its record number.
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(int)}.
    *
-   * @param recordNumber The key record number (between 1 and 126).
+   * @param recordNumber The key record number (in range [1..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided record number is out of range.
    * @since 0.7.0
@@ -60,16 +59,14 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
   T prepareReadWorkKeyParameters(int recordNumber);
 
   /**
-   * Schedules the execution of a "Read Key Parameters" command for a work key for which the KIF and
-   * KVC are provided.
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF and KVC.
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(byte, byte)}.
    *
    * @param kif The key KIF.
-   * @param kvc The key KIF.
+   * @param kvc The key KVC.
    * @return The current instance.
-   * @throws IllegalArgumentException If the provided record number is out of range.
    * @since 0.7.0
    */
   T prepareReadWorkKeyParameters(byte kif, byte kvc);

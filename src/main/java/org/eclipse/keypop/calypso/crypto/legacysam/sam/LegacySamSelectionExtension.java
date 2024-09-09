@@ -192,7 +192,7 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(int)}.
    *
-   * @param recordNumber The key record number (between 1 and 126).
+   * @param recordNumber The key record number (in range [1..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided record number is out of range.
    * @since 0.7.0
