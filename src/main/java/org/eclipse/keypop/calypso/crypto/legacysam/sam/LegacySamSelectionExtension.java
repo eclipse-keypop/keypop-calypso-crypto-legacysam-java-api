@@ -208,7 +208,6 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * @param kif The key KIF.
    * @param kvc The key KVC.
    * @return The current instance.
-   * @throws IllegalArgumentException If the provided record number is out of range.
    * @since 0.7.0
    */
   LegacySamSelectionExtension prepareReadWorkKeyParameters(byte kif, byte kvc);

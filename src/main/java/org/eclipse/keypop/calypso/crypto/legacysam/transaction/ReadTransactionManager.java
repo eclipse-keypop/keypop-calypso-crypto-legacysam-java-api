@@ -50,7 +50,7 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * number provided.
    *
    * <p>Once this command is processed, the result is accessible with {@link
-   * LegacySam#getWorkKeyParameter(int)} or {@link LegacySam#getWorkKeyParameter(byte, byte)}.
+   * LegacySam#getWorkKeyParameter(int)}.
    *
    * @param recordNumber The key record number (between 1 and 126).
    * @return The current instance.
@@ -64,7 +64,7 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * KVC are provided.
    *
    * <p>Once this command is processed, the result is accessible with {@link
-   * LegacySam#getWorkKeyParameter(int)} or {@link LegacySam#getWorkKeyParameter(byte, byte)}.
+   * LegacySam#getWorkKeyParameter(byte, byte)}.
    *
    * @param kif The key KIF.
    * @param kvc The key KIF.
