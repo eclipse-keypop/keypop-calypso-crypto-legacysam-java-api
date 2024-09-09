@@ -200,10 +200,11 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
   LegacySamSelectionExtension prepareReadWorkKeyParameters(int recordNumber);
 
   /**
-   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF and KVC.
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF
+   * and KVC.
    *
    * <p>Once this command is processed, the result is accessible with {@link
-   * {@link LegacySam#getWorkKeyParameter(byte, byte)}.
+   * LegacySam#getWorkKeyParameter(byte, byte)}.
    *
    * @param kif The key KIF.
    * @param kvc The key KVC.
