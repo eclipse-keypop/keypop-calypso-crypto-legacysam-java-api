@@ -25,8 +25,8 @@ public interface SecureWriteTransactionManager
    * Schedules the execution of a "Write Parameters" command to write the SAM parameters file.
    *
    * @param parameters A 29-byte byte array representing the content of the SAM parameters file.
-   * @throws IllegalArgumentException If the provided argument is null or out of range.
    * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager prepareWriteSamParameters(byte[] parameters);
@@ -37,8 +37,8 @@ public interface SecureWriteTransactionManager
    *
    * @param systemKeyType The type of system key.
    * @param systemKeyParameters A 29-byte byte array containing the key parameter data.
-   * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager prepareTransferSystemKey(
@@ -52,8 +52,8 @@ public interface SecureWriteTransactionManager
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
    * @param recordNumber The number of record where to store the key.
-   * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager prepareTransferWorkKey(

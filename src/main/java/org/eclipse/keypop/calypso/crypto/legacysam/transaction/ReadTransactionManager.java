@@ -46,7 +46,8 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
   T prepareReadSystemKeyParameters(SystemKeyType systemKeyType);
 
   /**
-   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its record number.
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its
+   * record number.
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(int)}.
@@ -59,7 +60,8 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
   T prepareReadWorkKeyParameters(int recordNumber);
 
   /**
-   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF and KVC.
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF
+   * and KVC.
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(byte, byte)}.
