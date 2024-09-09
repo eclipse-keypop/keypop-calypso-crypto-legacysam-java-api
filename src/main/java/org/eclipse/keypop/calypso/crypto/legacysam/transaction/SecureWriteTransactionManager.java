@@ -51,7 +51,7 @@ public interface SecureWriteTransactionManager
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
-   * @param recordNumber The number of record where to store the key.
+   * @param recordNumber The number of the record where to store the key (in range [1..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @since 0.7.0
