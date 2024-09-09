@@ -107,6 +107,8 @@ public interface LegacySam extends SmartCard {
    *
    * @param counterNumber The number of the counter (in range [0..26]).
    * @return Null if the counter value is not set.
+   * @see LegacySamSelectionExtension#prepareReadCounterStatus(int)
+   * @see FreeTransactionManager#prepareReadCounterStatus(int)
    * @since 0.1.0
    */
   Integer getCounter(int counterNumber);
@@ -116,6 +118,8 @@ public interface LegacySam extends SmartCard {
    * {@code value} is the counter value.
    *
    * @return A non-null map.
+   * @see LegacySamSelectionExtension#prepareReadAllCountersStatus()
+   * @see FreeTransactionManager#prepareReadAllCountersStatus()
    * @since 0.1.0
    */
   SortedMap<Integer, Integer> getCounters();
@@ -125,6 +129,8 @@ public interface LegacySam extends SmartCard {
    *
    * @param counterNumber The number of the counter being checked.
    * @return Null if the counter increment access is unknown.
+   * @see LegacySamSelectionExtension#prepareReadCounterStatus(int)
+   * @see FreeTransactionManager#prepareReadCounterStatus(int)
    * @since 0.2.0
    */
   CounterIncrementAccess getCounterIncrementAccess(int counterNumber);
@@ -134,6 +140,8 @@ public interface LegacySam extends SmartCard {
    *
    * @param counterNumber The number of the counter ceiling (in range [0..26]).
    * @return Null if the counter ceiling value is not set.
+   * @see LegacySamSelectionExtension#prepareReadCounterStatus(int)
+   * @see FreeTransactionManager#prepareReadCounterStatus(int)
    * @since 0.1.0
    */
   Integer getCounterCeiling(int counterNumber);
@@ -143,6 +151,8 @@ public interface LegacySam extends SmartCard {
    * number and {@code value} is the ceiling value.
    *
    * @return A non-null map.
+   * @see LegacySamSelectionExtension#prepareReadAllCountersStatus()
+   * @see FreeTransactionManager#prepareReadAllCountersStatus()
    * @since 0.1.0
    */
   SortedMap<Integer, Integer> getCounterCeilings();
@@ -151,6 +161,7 @@ public interface LegacySam extends SmartCard {
    * Gets the CA certificate retrieved from the SAM as a 384-byte byte array.
    *
    * @return null if the CA certificate is not available.
+   * @see LegacySamSelectionExtension#prepareGetData(GetDataTag)
    * @see FreeTransactionManager#prepareGetData(GetDataTag)
    * @since 0.5.0
    */
@@ -161,6 +172,7 @@ public interface LegacySam extends SmartCard {
    *
    * @return null if the SAM parameters are not available.
    * @see LegacySamSelectionExtension#prepareReadSamParameters()
+   * @see FreeTransactionManager#prepareReadSamParameters()
    * @since 0.7.0
    */
   SamParameters getSamParameters();
@@ -171,6 +183,8 @@ public interface LegacySam extends SmartCard {
    * @param systemKeyType The type of system key.
    * @return Null if there is no parameter available for the specified key type.
    * @throws IllegalArgumentException If the provided argument is null.
+   * @see LegacySamSelectionExtension#prepareReadSystemKeyParameters(SystemKeyType)
+   * @see FreeTransactionManager#prepareReadSystemKeyParameters(SystemKeyType)
    * @since 0.2.0
    */
   KeyParameter getSystemKeyParameter(SystemKeyType systemKeyType);
@@ -181,6 +195,8 @@ public interface LegacySam extends SmartCard {
    * @param recordNumber The key record number (between 1 and 126).
    * @return Null if there is no parameter available for the specified key record number.
    * @throws IllegalArgumentException If the provided record number is out of range.
+   * @see LegacySamSelectionExtension#prepareReadWorkKeyParameters(int)
+   * @see FreeTransactionManager#prepareReadWorkKeyParameters(int)
    * @since 0.7.0
    */
   KeyParameter getWorkKeyParameter(int recordNumber);
@@ -189,8 +205,10 @@ public interface LegacySam extends SmartCard {
    * Returns the parameters of the work key referenced by its KIF and KVC.
    *
    * @param kif The key KIF.
-   * @param kvc The key KIF.
+   * @param kvc The key KVC.
    * @return Null if there is no parameter available for the specified KIF/KVC.
+   * @see LegacySamSelectionExtension#prepareReadWorkKeyParameters(byte, byte)
+   * @see FreeTransactionManager#prepareReadWorkKeyParameters(byte, byte)
    * @since 0.7.0
    */
   KeyParameter getWorkKeyParameter(byte kif, byte kvc);
