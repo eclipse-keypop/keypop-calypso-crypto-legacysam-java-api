@@ -64,6 +64,18 @@ public interface LegacySamApiFactory {
   FreeTransactionManager createFreeTransactionManager(CardReader samReader, LegacySam sam);
 
   /**
+   * Returns a new instance of {@link SecureWriteTransactionManager}.
+   *
+   * @param samReader The reader to use to communicate with the SAM.
+   * @param sam The SAM image.
+   * @param securitySetting The security settings.
+   * @return A new instance of {@link SecureWriteTransactionManager}.
+   * @since 0.7.0
+   */
+  SecureWriteTransactionManager createSecureWriteTransactionManager(
+      CardReader samReader, LegacySam sam, SecuritySetting securitySetting);
+
+  /**
    * Returns a new instance of {@link AsyncTransactionCreatorManager}.
    *
    * <p>The target SAM context can be retrieved with the method {@link
