@@ -15,6 +15,8 @@ import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 /**
  * Transaction manager dedicated to "WRITE" operations.
  *
+ * <p>The write operations defined here can be executed synchronously or asynchronously.
+ *
  * @param <T> The type of the lowest level child object.
  * @since 0.2.0
  */

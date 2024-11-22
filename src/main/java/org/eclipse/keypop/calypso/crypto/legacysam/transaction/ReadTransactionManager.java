@@ -22,6 +22,17 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
     extends TransactionManager<T> {
 
   /**
+   * Schedules the execution of a "Read Parameters" command for the SAM.
+   *
+   * <p>Once this command is processed, the result is accessible with {@link
+   * LegacySam#getSystemKeyParameter(SystemKeyType)}.
+   *
+   * @return The current instance.
+   * @since 0.7.0
+   */
+  T prepareReadSamParameters();
+
+  /**
    * Schedules the execution of a "Read Key Parameters" command for a system key.
    *
    * <p>Once this command is processed, the result is accessible with {@link
@@ -33,6 +44,34 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * @since 0.2.0
    */
   T prepareReadSystemKeyParameters(SystemKeyType systemKeyType);
+
+  /**
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its
+   * record number.
+   *
+   * <p>Once this command is processed, the result is accessible with {@link
+   * LegacySam#getWorkKeyParameter(int)}.
+   *
+   * @param recordNumber The key record number (in range [1..126]).
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided record number is out of range.
+   * @since 0.7.0
+   */
+  T prepareReadWorkKeyParameters(int recordNumber);
+
+  /**
+   * Schedules the execution of a "Read Key Parameters" command for a work key referenced by its KIF
+   * and KVC.
+   *
+   * <p>Once this command is processed, the result is accessible with {@link
+   * LegacySam#getWorkKeyParameter(byte, byte)}.
+   *
+   * @param kif The key KIF.
+   * @param kvc The key KVC.
+   * @return The current instance.
+   * @since 0.7.0
+   */
+  T prepareReadWorkKeyParameters(byte kif, byte kvc);
 
   /**
    * Schedules the execution of a "Read Event Counter" and "Read Ceiling" commands to read the
