@@ -12,14 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `getSamParameters()` to retrieve the parameters read from the SAM.
     - `getWorkKeyParameter(int recordNumber)` to retrieve a read work key from its record number.
     - `getWorkKeyParameter(byte kif, byte kvc)` to retrieve a read work key from its KIF and KVC.
-- New methods added to `LegacySamApiFactory`:
-    - `createSecureWriteTransactionManager(CardReader samReader, LegacySam sam, SecuritySetting securitySetting)` to manage secure SAM write transactions.
 - New method added to `ReadTransactionManager`:
     - `prepareReadSamParameters()` to schedule the execution of "Read Parameters" command.
     - `prepareReadWorkKeyParameters(int recordNumber)` to schedule the execution of "Read Key Parameters" command.
     - `prepareReadWorkKeyParameters(byte kif, byte kvc)` to schedule the execution of "Read Key Parameters" command.
 - New method added to `FreeTransactionManager`:
     - `preparePlainWriteLock(byte lockIndex, byte lockParameters, byte[] lockValue)` to schedule the execution of "Write Key" command to write a lock in plain mode.
+- New methods added to `LegacySamApiFactory`:
+    - `createSecureWriteTransactionManager(CardReader samReader, LegacySam sam, SecuritySetting securitySetting)` to manage secure SAM write transactions.
 - New interface added `SecureWriteTransactionManager`:
     - `prepareWriteSamParameters(byte[] parameters)` to schedule the execution of "Write Parameters" command.
     - `prepareTransferSystemKey(SystemKeyType systemKeyType, byte kvc, byte[] systemKeyParameters)` to schedule the execution of "Write Key" command.
