@@ -16,12 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `prepareReadSamParameters()` to schedule the execution of "Read Parameters" command.
     - `prepareReadWorkKeyParameters(int recordNumber)` to schedule the execution of "Read Key Parameters" command.
     - `prepareReadWorkKeyParameters(byte kif, byte kvc)` to schedule the execution of "Read Key Parameters" command.
+- New method added to `FreeTransactionManager`:
+    - `preparePlainWriteLock(byte lockIndex, byte lockParameters, byte[] lockValue)` to schedule the execution of "Write Key" command to write a lock in plain mode.
 - New interface added `SecureWriteTransactionManager`:
     - `prepareWriteSamParameters(byte[] parameters)` to schedule the execution of "Write Parameters" command.
-    - `prepareTransferSystemKey(SystemKeyType systemKeyType, byte[] systemKeyParameters)` to schedule the execution of "
-      Write Key" command.
+    - `prepareTransferSystemKey(SystemKeyType systemKeyType, byte kvc, byte[] systemKeyParameters)` to schedule the execution of "Write Key" command.
     - `prepareTransferWorkKey(byte kif, byte kvc, byte[] workKeyParameters, int recordNumber)` to schedule the execution
       of "Write Key" command.
+    - `prepareTransferLock(byte lockIndex, byte lockParameters)` to schedule the execution of "Write Key" command to write a lock in ciphered mode.
+    - `preparePlainWriteLock(byte lockIndex, byte lockParameters, byte[] lockValue)` to schedule the execution of "Write Key" command to write a lock in plain mode.
 
 ## [0.6.0] - 2024-04-17
 ### Added
