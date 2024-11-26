@@ -70,6 +70,7 @@ public interface LegacySamApiFactory {
    * @param sam The SAM image.
    * @param securitySetting The security settings.
    * @return A new instance of {@link SecureWriteTransactionManager}.
+   * @throws IllegalArgumentException If an argument is null or invalid.
    * @since 0.7.0
    */
   SecureWriteTransactionManager createSecureWriteTransactionManager(
