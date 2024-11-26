@@ -25,7 +25,7 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * Schedules the execution of a "Read Parameters" command for the SAM.
    *
    * <p>Once this command is processed, the result is accessible with {@link
-   * LegacySam#getSystemKeyParameter(SystemKeyType)}.
+   * LegacySam#getSamParameters()}.
    *
    * @return The current instance.
    * @since 0.7.0

@@ -158,7 +158,7 @@ public interface LegacySam extends SmartCard {
   SortedMap<Integer, Integer> getCounterCeilings();
 
   /**
-   * Gets the CA certificate retrieved from the SAM as a 384-byte byte array.
+   * Returns the CA certificate retrieved from the SAM as a 384-byte byte array.
    *
    * @return null if the CA certificate is not available.
    * @see LegacySamSelectionExtension#prepareGetData(GetDataTag)
@@ -168,7 +168,7 @@ public interface LegacySam extends SmartCard {
   byte[] getCaCertificate();
 
   /**
-   * Gets the SAM parameters retrieved from the SAM.
+   * Returns the SAM parameters retrieved from the SAM.
    *
    * @return null if the SAM parameters are not available.
    * @see LegacySamSelectionExtension#prepareReadSamParameters()
