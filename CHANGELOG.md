@@ -46,6 +46,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `GetDataTag` to enumerate all output data types.
 - `KeyPairContainer` interface to contain a key pair.
 - `CardCertificateComputationData` interface to contain input/output data for the "PSO Compute Certificate" command.
+- New methods added to `LegacySamApiFactory`:
+  - `createSecureWriteTransactionManager(CardReader samReader, LegacySam sam, SecuritySetting securitySetting)` to manage secure SAM write transactions.
 - New methods added to `FreeTransactionManager`:
   - `prepareGetData(GetDataTag tag)` to schedule the execution of a "Get Data" command for
     the specified tag.
