@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `getSamParameters()` to retrieve the parameters read from the SAM.
     - `getWorkKeyParameter(int recordNumber)` to retrieve a read work key from its record number.
     - `getWorkKeyParameter(byte kif, byte kvc)` to retrieve a read work key from its KIF and KVC.
+- New methods added to `LegacySamApiFactory`:
+    - `createSecureWriteTransactionManager(CardReader samReader, LegacySam sam, SecuritySetting securitySetting)` to manage secure SAM write transactions.
 - New method added to `ReadTransactionManager`:
     - `prepareReadSamParameters()` to schedule the execution of "Read Parameters" command.
     - `prepareReadWorkKeyParameters(int recordNumber)` to schedule the execution of "Read Key Parameters" command.
@@ -46,8 +48,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `GetDataTag` to enumerate all output data types.
 - `KeyPairContainer` interface to contain a key pair.
 - `CardCertificateComputationData` interface to contain input/output data for the "PSO Compute Certificate" command.
-- New methods added to `LegacySamApiFactory`:
-  - `createSecureWriteTransactionManager(CardReader samReader, LegacySam sam, SecuritySetting securitySetting)` to manage secure SAM write transactions.
 - New methods added to `FreeTransactionManager`:
   - `prepareGetData(GetDataTag tag)` to schedule the execution of a "Get Data" command for
     the specified tag.
