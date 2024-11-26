@@ -69,6 +69,21 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
   FreeTransactionManager prepareComputeCardCertificate(LegacyCardCertificateComputationData data);
 
   /**
+   * Schedules the execution of a "Write Key" command to set the lock file of the SAM.
+   *
+   * <p>The lock value will be transferred in plain text.
+   *
+   * @param lockIndex The index of the lock file.
+   * @param lockParameters The lock permissions parameters.
+   * @param lockValue A 16-byte byte array representing the lock's value.
+   * @throws IllegalArgumentException If lockValue is null or out of range.
+   * @return The current instance.
+   * @since 0.7.0
+   */
+  FreeTransactionManager preparePlainWriteLock(
+      byte lockIndex, byte lockParameters, byte[] lockValue);
+
+  /**
    * Schedules the execution of a "Data Cipher" or "PSO Compute Signature" command.
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
