@@ -21,9 +21,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New interface added `SecureWriteTransactionManager`:
     - `prepareWriteSamParameters(byte[] parameters)` to schedule the execution of "Write Parameters" command.
     - `prepareTransferSystemKey(SystemKeyType systemKeyType, byte kvc, byte[] systemKeyParameters)` to schedule the execution of "Write Key" command.
-    - `prepareTransferWorkKey(byte kif, byte kvc, byte[] workKeyParameters, int recordNumber)` to schedule the execution
-      of "Write Key" command.
+    - `prepareTransferSystemKeyDiversified(SystemKeyType systemKeyType, byte kvc, byte[] systemKeyParameters)` to schedule the execution of "Write Key" command (the key is diversified by the SAM serial number).
+    - `prepareTransferWorkKey(byte kif, byte kvc, byte[] workKeyParameters, int targetRecordNumber)` to schedule the execution of "Write Key" command.
+    - `prepareTransferWorkKeyDiversified(byte kif, byte kvc, byte[] workKeyParameters, int targetRecordNumber)` to schedule the execution of "Write Key" command (the key is diversified by the SAM serial number).
+    - `prepareTransferWorkKeyDiversified(byte kif, byte kvc, byte[] workKeyParameters, int targetRecordNumber, byte[] diversifier)` to schedule the execution of "Write Key" command (the key is diversified by the provided diversifier).
     - `prepareTransferLock(byte lockIndex, byte lockParameters)` to schedule the execution of "Write Key" command to write a lock in ciphered mode.
+    - `prepareTransferLockDiversified(byte lockIndex, byte lockParameters)` to schedule the execution of "Write Key" command to write a lock in ciphered mode (the lock value is diversified by the SAM serial number).
     - `preparePlainWriteLock(byte lockIndex, byte lockParameters, byte[] lockValue)` to schedule the execution of "Write Key" command to write a lock in plain mode.
 
 ## [0.6.0] - 2024-04-17

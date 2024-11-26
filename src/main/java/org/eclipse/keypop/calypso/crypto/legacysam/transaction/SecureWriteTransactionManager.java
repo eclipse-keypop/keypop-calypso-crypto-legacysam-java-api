@@ -32,7 +32,7 @@ public interface SecureWriteTransactionManager
   SecureWriteTransactionManager prepareWriteSamParameters(byte[] parameters);
 
   /**
-   * Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+   * Schedules the execution of a "Write Key" command to perform the transfer of a system key from
    * the control SAM to the target SAM.
    *
    * @param systemKeyType The type of system key.
@@ -46,7 +46,7 @@ public interface SecureWriteTransactionManager
       SystemKeyType systemKeyType, byte kvc, byte[] systemKeyParameters);
 
   /**
-   * Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+   * Schedules the execution of a "Write Key" command to perform the transfer of a system key from
    * the control SAM to the target SAM, the key being first diversified (with the serial number of
    * the target SAM).
    *
@@ -61,7 +61,7 @@ public interface SecureWriteTransactionManager
       SystemKeyType systemKeyType, byte kvc, byte[] systemKeyParameters);
 
   /**
-   * Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+   * Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
    * control SAM to the target SAM.
    *
    * <p>The record number supplied indicates the destination location in the work key file. If its
@@ -70,16 +70,16 @@ public interface SecureWriteTransactionManager
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
-   * @param recordNumber The number of the record where to store the key (in range [0..126]).
+   * @param targetRecordNumber The number of the record where to store the key (in range [0..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager prepareTransferWorkKey(
-      byte kif, byte kvc, byte[] workKeyParameters, int recordNumber);
+      byte kif, byte kvc, byte[] workKeyParameters, int targetRecordNumber);
 
   /**
-   * Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+   * Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
    * control SAM to the target SAM, the key being first diversified with the serial number of the
    * target SAM).
    *
@@ -89,16 +89,16 @@ public interface SecureWriteTransactionManager
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
-   * @param recordNumber The number of the record where to store the key (in range [0..126]).
+   * @param targetRecordNumber The number of the record where to store the key (in range [0..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager prepareTransferWorkKeyDiversified(
-      byte kif, byte kvc, byte[] workKeyParameters, int recordNumber);
+      byte kif, byte kvc, byte[] workKeyParameters, int targetRecordNumber);
 
   /**
-   * Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+   * Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
    * control SAM to the target SAM, the key being first diversified with the provided diversifier.
    *
    * <p>The record number supplied indicates the destination location in the work key file. If its
@@ -107,14 +107,14 @@ public interface SecureWriteTransactionManager
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
-   * @param recordNumber The number of the record where to store the key (in range [0..126]).
+   * @param targetRecordNumber The number of the record where to store the key (in range [0..126]).
    * @param diversifier A 8-byte byte array to use as key diversifier.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager prepareTransferWorkKeyDiversified(
-      byte kif, byte kvc, byte[] workKeyParameters, int recordNumber, byte[] diversifier);
+      byte kif, byte kvc, byte[] workKeyParameters, int targetRecordNumber, byte[] diversifier);
 
   /**
    * Schedules the execution of a "Write Key" command to transfer a lock file from the control SAM
@@ -146,8 +146,8 @@ public interface SecureWriteTransactionManager
    * @param lockIndex The index of the lock file.
    * @param lockParameters The lock permissions parameters.
    * @param lockValue A 16-byte byte array representing the lock's value.
-   * @throws IllegalArgumentException If lockValue is null or out of range.
    * @return The current instance.
+   * @throws IllegalArgumentException If lockValue is null or out of range.
    * @since 0.7.0
    */
   SecureWriteTransactionManager preparePlainWriteLock(
