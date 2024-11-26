@@ -197,7 +197,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/sam/LegacySam.html#getCaCertificate()" class="member-name-link">getCaCertificate()</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.sam.<a href="org/eclipse/keypop/calypso/crypto/legacysam/sam/LegacySam.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.sam">LegacySam</a></dt>
 <dd>
-<div class="block">Gets the CA certificate retrieved from the SAM as a 384-byte byte array.</div>
+<div class="block">Returns the CA certificate retrieved from the SAM as a 384-byte byte array.</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/LegacyCardCertificateComputationData.html#getCertificate()" class="member-name-link">getCertificate()</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/LegacyCardCertificateComputationData.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">LegacyCardCertificateComputationData</a></dt>
 <dd>
@@ -268,7 +268,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/sam/LegacySam.html#getSamParameters()" class="member-name-link">getSamParameters()</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.sam.<a href="org/eclipse/keypop/calypso/crypto/legacysam/sam/LegacySam.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.sam">LegacySam</a></dt>
 <dd>
-<div class="block">Gets the SAM parameters retrieved from the SAM.</div>
+<div class="block">Returns the SAM parameters retrieved from the SAM.</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/sam/LegacySam.html#getSerialNumber()" class="member-name-link">getSerialNumber()</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.sam.<a href="org/eclipse/keypop/calypso/crypto/legacysam/sam/LegacySam.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.sam">LegacySam</a></dt>
 <dd>
@@ -541,29 +541,29 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html#prepareTransferSystemKey(org.eclipse.keypop.calypso.crypto.legacysam.SystemKeyType,byte,byte%5B%5D)" class="member-name-link">prepareTransferSystemKey(SystemKeyType, byte, byte[])</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM.</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html#prepareTransferSystemKeyDiversified(org.eclipse.keypop.calypso.crypto.legacysam.SystemKeyType,byte,byte%5B%5D)" class="member-name-link">prepareTransferSystemKeyDiversified(SystemKeyType, byte, byte[])</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM, the key being first diversified (with the serial number of
  the target SAM).</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html#prepareTransferWorkKey(byte,byte,byte%5B%5D,int)" class="member-name-link">prepareTransferWorkKey(byte, byte, byte[], int)</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM.</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html#prepareTransferWorkKeyDiversified(byte,byte,byte%5B%5D,int)" class="member-name-link">prepareTransferWorkKeyDiversified(byte, byte, byte[], int)</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the serial number of the
  target SAM).</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html#prepareTransferWorkKeyDiversified(byte,byte,byte%5B%5D,int,byte%5B%5D)" class="member-name-link">prepareTransferWorkKeyDiversified(byte, byte, byte[], int, byte[])</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the provided diversifier.</div>
 </dd>
 <dt><a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/CardTransactionLegacySamExtension.html#prepareVerifySignature(org.eclipse.keypop.calypso.crypto.legacysam.transaction.SignatureVerificationData)" class="member-name-link">prepareVerifySignature(SignatureVerificationData&lt;?&gt;)</a> - Method in interface org.eclipse.keypop.calypso.crypto.legacysam.transaction.<a href="org/eclipse/keypop/calypso/crypto/legacysam/transaction/CardTransactionLegacySamExtension.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">CardTransactionLegacySamExtension</a></dt>

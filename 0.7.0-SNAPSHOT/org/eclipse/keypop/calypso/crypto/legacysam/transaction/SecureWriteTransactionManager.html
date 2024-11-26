@@ -127,7 +127,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
  byte&nbsp;kvc,
  byte[]&nbsp;systemKeyParameters)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></code></div>
@@ -135,7 +135,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
  byte&nbsp;kvc,
  byte[]&nbsp;systemKeyParameters)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM, the key being first diversified (with the serial number of
  the target SAM).</div>
 </div>
@@ -143,18 +143,18 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#prepareTransferWorkKey(byte,byte,byte%5B%5D,int)" class="member-name-link">prepareTransferWorkKey</a><wbr>(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber)</code></div>
+ int&nbsp;targetRecordNumber)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#prepareTransferWorkKeyDiversified(byte,byte,byte%5B%5D,int)" class="member-name-link">prepareTransferWorkKeyDiversified</a><wbr>(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber)</code></div>
+ int&nbsp;targetRecordNumber)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the serial number of the
  target SAM).</div>
 </div>
@@ -162,10 +162,10 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#prepareTransferWorkKeyDiversified(byte,byte,byte%5B%5D,int,byte%5B%5D)" class="member-name-link">prepareTransferWorkKeyDiversified</a><wbr>(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber,
+ int&nbsp;targetRecordNumber,
  byte[]&nbsp;diversifier)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the provided diversifier.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></code></div>
@@ -216,7 +216,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="member-signature"><span class="return-type"><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></span>&nbsp;<span class="element-name">prepareTransferSystemKey</span><wbr><span class="parameters">(<a href="../SystemKeyType.html" title="enum class in org.eclipse.keypop.calypso.crypto.legacysam">SystemKeyType</a>&nbsp;systemKeyType,
  byte&nbsp;kvc,
  byte[]&nbsp;systemKeyParameters)</span></div>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -238,7 +238,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="member-signature"><span class="return-type"><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></span>&nbsp;<span class="element-name">prepareTransferSystemKeyDiversified</span><wbr><span class="parameters">(<a href="../SystemKeyType.html" title="enum class in org.eclipse.keypop.calypso.crypto.legacysam">SystemKeyType</a>&nbsp;systemKeyType,
  byte&nbsp;kvc,
  byte[]&nbsp;systemKeyParameters)</span></div>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM, the key being first diversified (with the serial number of
  the target SAM).</div>
 <dl class="notes">
@@ -261,8 +261,8 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="member-signature"><span class="return-type"><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></span>&nbsp;<span class="element-name">prepareTransferWorkKey</span><wbr><span class="parameters">(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber)</span></div>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+ int&nbsp;targetRecordNumber)</span></div>
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM.
 
  <p>The record number supplied indicates the destination location in the work key file. If its
@@ -272,7 +272,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <dd><code>kif</code> - The KIF of the key.</dd>
 <dd><code>kvc</code> - The KVC of the key.</dd>
 <dd><code>workKeyParameters</code> - A 29-byte byte array containing the key parameter data.</dd>
-<dd><code>recordNumber</code> - The number of the record where to store the key (in range [0..126]).</dd>
+<dd><code>targetRecordNumber</code> - The number of the record where to store the key (in range [0..126]).</dd>
 <dt>Returns:</dt>
 <dd>The current instance.</dd>
 <dt>Throws:</dt>
@@ -288,8 +288,8 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="member-signature"><span class="return-type"><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></span>&nbsp;<span class="element-name">prepareTransferWorkKeyDiversified</span><wbr><span class="parameters">(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber)</span></div>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+ int&nbsp;targetRecordNumber)</span></div>
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the serial number of the
  target SAM).
 
@@ -300,7 +300,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <dd><code>kif</code> - The KIF of the key.</dd>
 <dd><code>kvc</code> - The KVC of the key.</dd>
 <dd><code>workKeyParameters</code> - A 29-byte byte array containing the key parameter data.</dd>
-<dd><code>recordNumber</code> - The number of the record where to store the key (in range [0..126]).</dd>
+<dd><code>targetRecordNumber</code> - The number of the record where to store the key (in range [0..126]).</dd>
 <dt>Returns:</dt>
 <dd>The current instance.</dd>
 <dt>Throws:</dt>
@@ -316,9 +316,9 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <div class="member-signature"><span class="return-type"><a href="SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></span>&nbsp;<span class="element-name">prepareTransferWorkKeyDiversified</span><wbr><span class="parameters">(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber,
+ int&nbsp;targetRecordNumber,
  byte[]&nbsp;diversifier)</span></div>
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the provided diversifier.
 
  <p>The record number supplied indicates the destination location in the work key file. If its
@@ -328,7 +328,7 @@ extends <a href="WriteTransactionManager.html" title="interface in org.eclipse.k
 <dd><code>kif</code> - The KIF of the key.</dd>
 <dd><code>kvc</code> - The KVC of the key.</dd>
 <dd><code>workKeyParameters</code> - A 29-byte byte array containing the key parameter data.</dd>
-<dd><code>recordNumber</code> - The number of the record where to store the key (in range [0..126]).</dd>
+<dd><code>targetRecordNumber</code> - The number of the record where to store the key (in range [0..126]).</dd>
 <dd><code>diversifier</code> - A 8-byte byte array to use as key diversifier.</dd>
 <dt>Returns:</dt>
 <dd>The current instance.</dd>

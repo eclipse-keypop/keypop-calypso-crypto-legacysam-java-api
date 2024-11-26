@@ -118,7 +118,7 @@ loadScripts(document, 'script');</script>
  byte&nbsp;kvc,
  byte[]&nbsp;systemKeyParameters)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></code></div>
@@ -126,7 +126,7 @@ loadScripts(document, 'script');</script>
  byte&nbsp;kvc,
  byte[]&nbsp;systemKeyParameters)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a system key from
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a system key from
  the control SAM to the target SAM, the key being first diversified (with the serial number of
  the target SAM).</div>
 </div>
@@ -134,18 +134,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">SecureWriteTransactionManager.</span><code><a href="../SecureWriteTransactionManager.html#prepareTransferWorkKey(byte,byte,byte%5B%5D,int)" class="member-name-link">prepareTransferWorkKey</a><wbr>(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber)</code></div>
+ int&nbsp;targetRecordNumber)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">SecureWriteTransactionManager.</span><code><a href="../SecureWriteTransactionManager.html#prepareTransferWorkKeyDiversified(byte,byte,byte%5B%5D,int)" class="member-name-link">prepareTransferWorkKeyDiversified</a><wbr>(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber)</code></div>
+ int&nbsp;targetRecordNumber)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the serial number of the
  target SAM).</div>
 </div>
@@ -153,10 +153,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">SecureWriteTransactionManager.</span><code><a href="../SecureWriteTransactionManager.html#prepareTransferWorkKeyDiversified(byte,byte,byte%5B%5D,int,byte%5B%5D)" class="member-name-link">prepareTransferWorkKeyDiversified</a><wbr>(byte&nbsp;kif,
  byte&nbsp;kvc,
  byte[]&nbsp;workKeyParameters,
- int&nbsp;recordNumber,
+ int&nbsp;targetRecordNumber,
  byte[]&nbsp;diversifier)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Schedules the execution of a "Write Key" command to realize the transfer of a work key from the
+<div class="block">Schedules the execution of a "Write Key" command to perform the transfer of a work key from the
  control SAM to the target SAM, the key being first diversified with the provided diversifier.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="../SecureWriteTransactionManager.html" title="interface in org.eclipse.keypop.calypso.crypto.legacysam.transaction">SecureWriteTransactionManager</a></code></div>
