@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2024-11-29
 ### Added
 - New interface `SamParameters` to contains the SAM parameters.
 - New method added to `LegacySam`:
@@ -161,7 +162,8 @@ GitHub repository.
 - APIs of the SAM image and SAM selection.
 - APIs related to signature computation and verification as well as counter and ceiling reading.
   
-[unreleased]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.6.0...HEAD
+[unreleased]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/eclipse-keypop/keypop-calypso-crypto-legacysam-java-api/compare/0.3.0...0.4.0
