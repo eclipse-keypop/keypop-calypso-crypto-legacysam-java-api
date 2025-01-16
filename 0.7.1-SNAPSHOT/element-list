@@ -1,0 +1,4 @@
+org.eclipse.keypop.calypso.crypto.legacysam
+org.eclipse.keypop.calypso.crypto.legacysam.sam
+org.eclipse.keypop.calypso.crypto.legacysam.spi
+org.eclipse.keypop.calypso.crypto.legacysam.transaction
