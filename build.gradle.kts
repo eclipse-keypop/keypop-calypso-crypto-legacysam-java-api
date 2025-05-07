@@ -27,9 +27,9 @@ repositories {
 dependencies {
     implementation("org.eclipse.keypop:keypop-reader-java-api:2.0.1")
     implementation("org.eclipse.keypop:keypop-calypso-card-java-api:2.1.0")
-    testImplementation(platform("org.junit:junit-bom:5.10.2"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation(platform("org.junit:junit-bom:5.12.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.assertj:assertj-core:3.25.3")
 }
 
@@ -57,6 +57,7 @@ tasks {
         }
     }
     test {
+        useJUnitPlatform()
         testLogging {
             events("passed", "skipped", "failed")
         }
