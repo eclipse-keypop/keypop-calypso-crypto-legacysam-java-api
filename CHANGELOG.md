@@ -8,7 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed JUnit configuration.
 ### Changed
+- `TransactionManager` now extends `org.eclipse.keypop.reader.transaction.spi.CardTransactionManager` from Keypop Reader API 2.1+ to align with standardized card transaction operations.
+- Method `processCommands()` in `TransactionManager` is deprecated and replaced by `processCommands(ChannelControl channelControl)` to support channel control policy management.
 - Migrated the CI pipeline from Jenkins to GitHub Actions.
+### Deprecated
+- `ReaderIOException` is deprecated and will be removed in a future version. Use `org.eclipse.keypop.reader.ReaderCommunicationException` instead.
+- `SamIOException` is deprecated and will be removed in a future version. Use `org.eclipse.keypop.reader.CardCommunicationException` instead.
+- `UnexpectedCommandStatusException` is deprecated and will be removed in a future version. Use `org.eclipse.keypop.reader.InvalidCardResponseException` instead.
+- `TransactionManager.processCommands()` is deprecated. Use `processCommands(ChannelControl channelControl)` instead.
+### Upgraded
+- Keypop Reader API `2.0.1` -> `2.1.0`
 
 ## [0.7.0] - 2024-11-29
 ### Added

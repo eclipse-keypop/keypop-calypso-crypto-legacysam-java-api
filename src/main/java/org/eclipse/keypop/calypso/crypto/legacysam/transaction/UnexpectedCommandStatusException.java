@@ -24,7 +24,11 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  * PIN verification attempts.
  *
  * @since 0.1.0
+ * @deprecated This exception is replaced by {@link
+ *     org.eclipse.keypop.reader.InvalidCardResponseException} from Keypop Reader API 2.1+. It will
+ *     be removed in a future version.
  */
+@Deprecated
 public final class UnexpectedCommandStatusException extends RuntimeException {
 
   /**
