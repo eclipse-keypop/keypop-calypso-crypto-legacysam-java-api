@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `TransactionManager.processCommands()` is deprecated. Use `processCommands(ChannelControl channelControl)` instead.
 ### Upgraded
 - Keypop Reader API `2.0.1` -> `2.1.0`
+- Keypop Calypso Card API `2.1.0` -> `2.2.0`
 
 ## [0.7.0] - 2024-11-29
 ### Added

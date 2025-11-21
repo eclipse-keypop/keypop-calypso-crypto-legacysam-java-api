@@ -15,7 +15,7 @@ plugins {
 
 dependencies {
   implementation("org.eclipse.keypop:keypop-reader-java-api:2.1.0")
-  implementation("org.eclipse.keypop:keypop-calypso-card-java-api:2.1.0")
+  implementation("org.eclipse.keypop:keypop-calypso-card-java-api:2.2.0")
   testImplementation(platform("org.junit:junit-bom:5.12.2"))
   testImplementation("org.junit.jupiter:junit-jupiter")
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")
