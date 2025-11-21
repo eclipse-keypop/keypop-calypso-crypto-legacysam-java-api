@@ -15,7 +15,11 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  * Indicates a communication error with the reader of the card or SAM.
  *
  * @since 0.1.0
+ * @deprecated This exception is replaced by {@link
+ *     org.eclipse.keypop.reader.ReaderCommunicationException} from Keypop Reader API 2.1+. It will
+ *     be removed in a future version.
  */
+@Deprecated
 public final class ReaderIOException extends RuntimeException {
 
   /**

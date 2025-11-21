@@ -80,8 +80,8 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * status of a counter.
    *
    * <p>Note: the status of each counter of the record to which the targeted counter belongs will be
-   * read. The number of commands actually transmitted to the SAM will be optimized when the {@link
-   * #processCommands()} method is executed.
+   * read. The number of commands actually transmitted to the SAM will be optimized when the {@code
+   * processCommands} method is executed.
    *
    * @param counterNumber The number of the counter whose status is to be read (in range [0..26]).
    * @return The current instance.
