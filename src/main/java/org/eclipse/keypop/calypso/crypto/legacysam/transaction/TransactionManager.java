@@ -47,7 +47,7 @@ public interface TransactionManager<T extends TransactionManager<T>>
    * @throws InvalidSignatureException If a signature associated to a prepared signature
    *     verification command is invalid.
    * @throws InconsistentDataException If inconsistent data have been detected.
-   * @since 0.8.0
+   * @since 1.0.0
    */
   @Override
   T processCommands(ChannelControl channelControl);
