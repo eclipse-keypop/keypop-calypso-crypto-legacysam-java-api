@@ -28,12 +28,20 @@ import org.eclipse.keypop.reader.selection.spi.SmartCard;
  * <p>It is a dynamic view of the SAM's content, regularly updated from the selection stage to the
  * end of the transaction.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_LegacySam">LegacySam</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public interface LegacySam extends SmartCard {
 
   /**
    * Returns the SAM product type.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getProductType">LegacySam.getProductType</a>
+   * for the normative contract.
    *
    * @return The identified product type.
    * @since 0.1.0
@@ -43,6 +51,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns a text description of the SAM.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getProductInfo">LegacySam.getProductInfo</a>
+   * for the normative contract.
+   *
    * @return A non-null string.
    * @since 0.1.0
    */
@@ -50,6 +62,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the SAM serial number as a byte array.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getSerialNumber">LegacySam.getSerialNumber</a>
+   * for the normative contract.
    *
    * @return A non-null byte array.
    * @since 0.1.0
@@ -59,6 +75,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the platform identifier.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getPlatform">LegacySam.getPlatform</a>
+   * for the normative contract.
+   *
    * @return A byte.
    * @since 0.1.0
    */
@@ -66,6 +86,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the application type.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getApplicationType">LegacySam.getApplicationType</a>
+   * for the normative contract.
    *
    * @return A byte.
    * @since 0.1.0
@@ -75,6 +99,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the application subtype.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getApplicationSubType">LegacySam.getApplicationSubType</a>
+   * for the normative contract.
+   *
    * @return A byte.
    * @since 0.1.0
    */
@@ -82,6 +110,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the software issuer identifier.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getSoftwareIssuer">LegacySam.getSoftwareIssuer</a>
+   * for the normative contract.
    *
    * @return A byte.
    * @since 0.1.0
@@ -91,6 +123,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the software version number.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getSoftwareVersion">LegacySam.getSoftwareVersion</a>
+   * for the normative contract.
+   *
    * @return A byte.
    * @since 0.1.0
    */
@@ -99,6 +135,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the software revision number.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getSoftwareRevision">LegacySam.getSoftwareRevision</a>
+   * for the normative contract.
+   *
    * @return A byte.
    * @since 0.1.0
    */
@@ -106,6 +146,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the value of a counter.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getCounter">LegacySam.getCounter</a>
+   * for the normative contract.
    *
    * @param counterNumber The number of the counter (in range [0..26]).
    * @return Null if the counter value is not set.
@@ -119,6 +163,10 @@ public interface LegacySam extends SmartCard {
    * Returns the value of known counters in a sorted map where {@code key} is the counter number and
    * {@code value} is the counter value.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getCounters">LegacySam.getCounters</a>
+   * for the normative contract.
+   *
    * @return A non-null map.
    * @see LegacySamSelectionExtension#prepareReadAllCountersStatus()
    * @see FreeTransactionManager#prepareReadAllCountersStatus()
@@ -128,6 +176,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the counter increment access mode.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getCounterIncrementAccess">LegacySam.getCounterIncrementAccess</a>
+   * for the normative contract.
    *
    * @param counterNumber The number of the counter being checked.
    * @return Null if the counter increment access is unknown.
@@ -139,6 +191,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the value of a counter ceiling.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getCounterCeiling">LegacySam.getCounterCeiling</a>
+   * for the normative contract.
    *
    * @param counterNumber The number of the counter ceiling (in range [0..26]).
    * @return Null if the counter ceiling value is not set.
@@ -152,6 +208,10 @@ public interface LegacySam extends SmartCard {
    * Returns the value of known counter ceilings in a sorted map where {@code key} is the ceiling
    * number and {@code value} is the ceiling value.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getCounterCeilings">LegacySam.getCounterCeilings</a>
+   * for the normative contract.
+   *
    * @return A non-null map.
    * @see LegacySamSelectionExtension#prepareReadAllCountersStatus()
    * @see FreeTransactionManager#prepareReadAllCountersStatus()
@@ -161,6 +221,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the CA certificate retrieved from the SAM as a 384-byte byte array.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getCaCertificate">LegacySam.getCaCertificate</a>
+   * for the normative contract.
    *
    * @return null if the CA certificate is not available.
    * @see LegacySamSelectionExtension#prepareGetData(GetDataTag)
@@ -172,6 +236,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the SAM parameters retrieved from the SAM.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getSamParameters">LegacySam.getSamParameters</a>
+   * for the normative contract.
+   *
    * @return null if the SAM parameters are not available.
    * @see LegacySamSelectionExtension#prepareReadSamParameters()
    * @see FreeTransactionManager#prepareReadSamParameters()
@@ -181,6 +249,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * Returns the parameters of the system key for the specified key type.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getSystemKeyParameter">LegacySam.getSystemKeyParameter</a>
+   * for the normative contract.
    *
    * @param systemKeyType The type of system key.
    * @return Null if there is no parameter available for the specified key type.
@@ -194,6 +266,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the parameters of the work key referenced by its record number.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getWorkKeyParameter_byRecord">LegacySam.getWorkKeyParameter</a>
+   * for the normative contract.
+   *
    * @param recordNumber The key record number (in range [1..126]).
    * @return Null if there is no parameter available for the specified key record number.
    * @throws IllegalArgumentException If the provided record number is out of range.
@@ -206,6 +282,10 @@ public interface LegacySam extends SmartCard {
   /**
    * Returns the parameters of the work key referenced by its KIF and KVC.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySam_getWorkKeyParameter_byKifKvc">LegacySam.getWorkKeyParameter</a>
+   * for the normative contract.
+   *
    * @param kif The key KIF.
    * @param kvc The key KVC.
    * @return Null if there is no parameter available for the specified KIF/KVC.
@@ -217,6 +297,10 @@ public interface LegacySam extends SmartCard {
 
   /**
    * All Calypso SAM products supported by this API.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_ProductType">LegacySam.ProductType</a>
+   * for the normative contract.
    *
    * @since 0.1.0
    */

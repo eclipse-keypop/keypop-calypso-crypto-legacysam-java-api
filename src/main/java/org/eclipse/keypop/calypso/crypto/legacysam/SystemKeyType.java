@@ -16,6 +16,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam;
  *
  * <p>Each type corresponds to a specific use.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_SystemKeyType">SystemKeyType</a>
+ * for the normative contract.
+ *
  * @since 0.2.0
  */
 public enum SystemKeyType {

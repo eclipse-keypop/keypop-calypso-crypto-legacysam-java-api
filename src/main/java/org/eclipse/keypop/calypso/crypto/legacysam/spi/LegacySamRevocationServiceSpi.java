@@ -14,6 +14,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.spi;
 /**
  * Service to be implemented in order to check dynamically if a SAM is revoked.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_LegacySamRevocationServiceSpi">LegacySamRevocationServiceSpi</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public interface LegacySamRevocationServiceSpi {
@@ -22,6 +26,10 @@ public interface LegacySamRevocationServiceSpi {
    * Checks if the SAM with the provided serial number is revoked or not.
    *
    * <p>Note: the provided SAM serial number can be complete (4 bytes) or partial (3 LSBytes).
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamRevocationServiceSpi_isSamRevoked">LegacySamRevocationServiceSpi.isSamRevoked</a>
+   * for the normative contract.
    *
    * @param serialNumber The complete or partial SAM serial number to check.
    * @return True if the SAM is revoked, otherwise false.
@@ -34,6 +42,10 @@ public interface LegacySamRevocationServiceSpi {
    * or not.
    *
    * <p>Note: the provided SAM serial number can be complete (4 bytes) or partial (3 LSBytes).
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamRevocationServiceSpi_isSamRevoked_withCounter">LegacySamRevocationServiceSpi.isSamRevoked</a>
+   * for the normative contract.
    *
    * @param serialNumber The complete or partial SAM serial number to check.
    * @param counterValue The SAM counter value.

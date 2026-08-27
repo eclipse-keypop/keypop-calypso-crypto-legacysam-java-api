@@ -14,6 +14,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam;
 /**
  * Enumeration of the different possible access rights for incrementing event counters.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_CounterIncrementAccess">CounterIncrementAccess</a>
+ * for the normative contract.
+ *
  * @since 0.3.0
  */
 public enum CounterIncrementAccess {

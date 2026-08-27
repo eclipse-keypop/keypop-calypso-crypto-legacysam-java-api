@@ -14,6 +14,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 /**
  * Indicates that a signature is invalid.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_InvalidSignatureException">InvalidSignatureException</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public final class InvalidSignatureException extends RuntimeException {

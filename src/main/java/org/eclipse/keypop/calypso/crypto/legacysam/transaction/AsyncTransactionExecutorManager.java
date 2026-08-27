@@ -22,8 +22,11 @@ import org.eclipse.keypop.reader.CardReader;
  * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createAsyncTransactionExecutorManager(CardReader,
  * LegacySam, String)}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_AsyncTransactionExecutorManager">AsyncTransactionExecutorManager</a>
+ * for the normative contract.
+ *
  * @see AsyncTransactionCreatorManager
  * @since 0.2.0
  */
-public interface AsyncTransactionExecutorManager
-    extends TransactionManager<AsyncTransactionExecutorManager> {}
+public interface AsyncTransactionExecutorManager extends TransactionManager {}
