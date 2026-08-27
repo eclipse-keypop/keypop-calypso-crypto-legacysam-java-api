@@ -50,6 +50,10 @@ import org.eclipse.keypop.reader.selection.spi.CardSelectionExtension;
  * the time of the creation of the selection extension or later depending on the implementation (in
  * the case of dynamic SAM reader allocation for example).
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_LegacySamSelectionExtension">LegacySamSelectionExtension</a>
+ * for the normative contract.
+ *
  * @since 0.3.0
  */
 public interface LegacySamSelectionExtension extends CardSelectionExtension {
@@ -59,6 +63,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * of the "Unlock data" command in the first position.
    *
    * <p>The "Unlock" command will be executed only after a successful filtering.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_setUnlockData">LegacySamSelectionExtension.setUnlockData</a>
+   * for the normative contract.
    *
    * @param unlockData Unlock data as a 32-character hexadecimal string.
    * @return The current instance.
@@ -74,6 +82,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * the "Unlock data" command in the first position.
    *
    * <p>The "Unlock" command will be executed only after a successful filtering.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_setUnlockData_withProductType">LegacySamSelectionExtension.setUnlockData</a>
+   * for the normative contract.
    *
    * @param unlockData Unlock data as a 32-character hexadecimal string.
    * @param productType The targeted product type.
@@ -94,6 +106,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
    * a request to the provider to obtain the needed unlocking data.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_setStaticUnlockDataProvider">LegacySamSelectionExtension.setStaticUnlockDataProvider</a>
+   * for the normative contract.
+   *
    * @param staticUnlockDataProvider An implementation of {@link
    *     LegacySamStaticUnlockDataProviderSpi}.
    * @return The current instance.
@@ -112,6 +128,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    *
    * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
    * a request to the provider to obtain the needed unlocking data.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_setStaticUnlockDataProvider_withReader">LegacySamSelectionExtension.setStaticUnlockDataProvider</a>
+   * for the normative contract.
    *
    * @param staticUnlockDataProvider An implementation of {@link
    *     LegacySamStaticUnlockDataProviderSpi}.
@@ -133,6 +153,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
    * a request to the provider to obtain the needed unlocking data.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_setDynamicUnlockDataProvider">LegacySamSelectionExtension.setDynamicUnlockDataProvider</a>
+   * for the normative contract.
+   *
    * @param dynamicUnlockDataProvider An implementation of {@link
    *     LegacySamDynamicUnlockDataProviderSpi}.
    * @return The current instance.
@@ -152,6 +176,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * <p>The "Unlock" command is initiated once the filtering is successfully completed, followed by
    * a request to the provider to obtain the needed unlocking data.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_setDynamicUnlockDataProvider_withReader">LegacySamSelectionExtension.setDynamicUnlockDataProvider</a>
+   * for the normative contract.
+   *
    * @param dynamicUnlockDataProvider An implementation of {@link
    *     LegacySamDynamicUnlockDataProviderSpi}.
    * @param targetSamReader The card reader used to communicate with the target SAM.
@@ -169,6 +197,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getSamParameters()}.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadSamParameters">LegacySamSelectionExtension.prepareReadSamParameters</a>
+   * for the normative contract.
+   *
    * @return The current instance.
    * @since 0.7.0
    */
@@ -179,6 +211,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getSystemKeyParameter(SystemKeyType)}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadSystemKeyParameters">LegacySamSelectionExtension.prepareReadSystemKeyParameters</a>
+   * for the normative contract.
    *
    * @param systemKeyType The type of system key.
    * @return The current instance.
@@ -194,6 +230,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(int)}.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadWorkKeyParameters_byRecord">LegacySamSelectionExtension.prepareReadWorkKeyParameters</a>
+   * for the normative contract.
+   *
    * @param recordNumber The key record number (in range [1..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided record number is out of range.
@@ -207,6 +247,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(byte, byte)}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadWorkKeyParameters_byKifKvc">LegacySamSelectionExtension.prepareReadWorkKeyParameters</a>
+   * for the normative contract.
    *
    * @param kif The key KIF.
    * @param kvc The key KVC.
@@ -223,6 +267,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * read. The number of commands actually transmitted to the SAM will be optimized before to be
    * transmitted.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadCounterStatus">LegacySamSelectionExtension.prepareReadCounterStatus</a>
+   * for the normative contract.
+   *
    * @param counterNumber The number of the counter whose status is to be read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is out of range.
@@ -234,6 +282,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    * Schedules the execution of a "Read Event Counter" and "Read Ceiling" commands to read the
    * status of all counters.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadAllCountersStatus">LegacySamSelectionExtension.prepareReadAllCountersStatus</a>
+   * for the normative contract.
+   *
    * @return The current instance.
    * @since 0.3.0
    */
@@ -244,6 +296,10 @@ public interface LegacySamSelectionExtension extends CardSelectionExtension {
    *
    * <p>Once this command is processed, data is accessible using dedicated getter methods, like
    * {@link LegacySam#getCaCertificate()}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareGetData">LegacySamSelectionExtension.prepareGetData</a>
+   * for the normative contract.
    *
    * @param tag The tag to retrieve the data for.
    * @return The current instance.

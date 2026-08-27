@@ -5,6 +5,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+:warning: Major version aligning the API with version `2.0` of the
+[CNA Terminal Calypso Crypto Legacy SAM API specification](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/).
+This release is **not** backward compatible with `1.x`.
+### Changed
+- `TransactionManager` is no longer generic and now extends the non-generic `CardTransactionManager`
+  (Reader API 3.0). It declares no operation of its own: command processing relies entirely on the inherited
+  `processCommands()`.
+- `ReadTransactionManager`, `WriteTransactionManager` and `AsyncTransactionExecutorManager` extend the
+  non-generic `TransactionManager` accordingly.
+- Upgraded the `keypop-reader-java-api` dependency to `3.0.0` and `keypop-calypso-card-java-api` to `3.0.0`.
+### Removed
+- `TransactionManager.processCommands()` returning `T` and `processCommands(ChannelControl)`, both deprecated:
+  use the inherited `void processCommands()`.
+- `SamIOException`, `ReaderIOException` and `UnexpectedCommandStatusException`, all deprecated: superseded by
+  `CardCommunicationException`, `ReaderCommunicationException` and `InvalidCardResponseException` of the Reader
+  API 3.0, raised by the inherited `processCommands()`.
 
 ## [1.0.0] - 2025-11-21
 ### Fixed

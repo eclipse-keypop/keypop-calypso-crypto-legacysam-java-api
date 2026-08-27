@@ -17,12 +17,20 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  *
  * <p>A key pair consists of a byte array containing the public key and a private key values.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_KeyPairContainer">KeyPairContainer</a>
+ * for the normative contract.
+ *
  * @since 0.5.0
  */
 public interface KeyPairContainer {
 
   /**
    * Returns the key pair.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_KeyPairContainer_getKeyPair">KeyPairContainer.getKeyPair</a>
+   * for the normative contract.
    *
    * @return The key pair as a 96-byte byte array.
    * @since 0.5.0

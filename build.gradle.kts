@@ -4,6 +4,7 @@
 
 plugins {
   java
+  `java-library`
   `maven-publish`
   signing
   id("com.diffplug.spotless") version "6.25.0"
@@ -14,8 +15,8 @@ plugins {
 ///////////////////////////////////////////////////////////////////////////////
 
 dependencies {
-  implementation("org.eclipse.keypop:keypop-reader-java-api:2.1.0")
-  implementation("org.eclipse.keypop:keypop-calypso-card-java-api:2.2.0")
+  api("org.eclipse.keypop:keypop-reader-java-api:3.0.0-SNAPSHOT")
+  api("org.eclipse.keypop:keypop-calypso-card-java-api:3.0.0-SNAPSHOT")
   testImplementation(platform("org.junit:junit-bom:5.12.2"))
   testImplementation("org.junit.jupiter:junit-jupiter")
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")

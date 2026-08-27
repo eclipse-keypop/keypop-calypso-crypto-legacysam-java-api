@@ -11,44 +11,18 @@
  ************************************************************************************** */
 package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 
-import org.eclipse.keypop.reader.ChannelControl;
 import org.eclipse.keypop.reader.transaction.spi.CardTransactionManager;
 
 /**
- * Common API for all legacy SAM transaction managers.
+ * Common base of every legacy SAM transaction manager, providing command processing for the SAM.
  *
- * <p>Extends {@link CardTransactionManager} to provide common card transaction operations.
+ * <p>Processing of prepared commands is inherited from {@link
+ * CardTransactionManager#processCommands()} and is not redefined here.
  *
- * @param <T> The type of the lowest level child object.
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_TransactionManager">TransactionManager</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
-public interface TransactionManager<T extends TransactionManager<T>>
-    extends CardTransactionManager<T> {
-
-  /**
-   * Process all previously prepared commands.
-   *
-   * @return The current instance.
-   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
-   * @throws SamIOException If a communication error with the SAM occurs.
-   * @throws InvalidSignatureException If a signature associated to a prepared signature
-   *     verification command is invalid.
-   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws InconsistentDataException If inconsistent data have been detected.
-   * @since 0.1.0
-   * @deprecated Use {@link #processCommands(ChannelControl)} instead.
-   */
-  @Deprecated
-  T processCommands();
-
-  /**
-   * {@inheritDoc}
-   *
-   * @throws InvalidSignatureException If a signature associated to a prepared signature
-   *     verification command is invalid.
-   * @throws InconsistentDataException If inconsistent data have been detected.
-   * @since 1.0.0
-   */
-  @Override
-  T processCommands(ChannelControl channelControl);
-}
+public interface TransactionManager extends CardTransactionManager {}

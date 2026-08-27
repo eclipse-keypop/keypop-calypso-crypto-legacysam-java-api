@@ -14,6 +14,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.spi;
 /**
  * Service to be implemented in order to compute the dynamic unlock data expected by the SAM.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_LegacySamDynamicUnlockDataProviderSpi">LegacySamDynamicUnlockDataProviderSpi</a>
+ * for the normative contract.
+ *
  * @since 0.4.0
  */
 public interface LegacySamDynamicUnlockDataProviderSpi {
@@ -23,6 +27,10 @@ public interface LegacySamDynamicUnlockDataProviderSpi {
    *
    * <p>Note: the serial number and the challenge are required in the preparation of the SAM
    * Generate Unlock command.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamDynamicUnlockDataProviderSpi_getUnlockData">LegacySamDynamicUnlockDataProviderSpi.getUnlockData</a>
+   * for the normative contract.
    *
    * @param samSerialNumber The target SAM serial number.
    * @param samChallenge The challenge provided by the target SAM.

@@ -20,6 +20,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createAsyncTransactionCreatorManager(String,
  * SecuritySetting)}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_AsyncTransactionCreatorManager">AsyncTransactionCreatorManager</a>
+ * for the normative contract.
+ *
  * @see AsyncTransactionExecutorManager
  * @since 0.2.0
  */
@@ -31,6 +35,10 @@ public interface AsyncTransactionCreatorManager
    *
    * <p>These commands can later be imported and processed by a {@link
    * AsyncTransactionExecutorManager}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_AsyncTransactionCreatorManager_exportCommands">AsyncTransactionCreatorManager.exportCommands</a>
+   * for the normative contract.
    *
    * @return A not empty string.
    * @since 0.2.0

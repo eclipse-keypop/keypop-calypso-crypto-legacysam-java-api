@@ -23,6 +23,10 @@ import org.eclipse.keypop.calypso.card.transaction.spi.CardTransactionCryptoExte
  * or {@link
  * org.eclipse.keypop.calypso.card.transaction.SecureExtendedModeTransactionManager#getCryptoExtension(Class)}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_CardTransactionLegacySamExtension">CardTransactionLegacySamExtension</a>
+ * for the normative contract.
+ *
  * @since 0.3.0
  */
 public interface CardTransactionLegacySamExtension extends CardTransactionCryptoExtension {
@@ -47,6 +51,10 @@ public interface CardTransactionLegacySamExtension extends CardTransactionCrypto
    *       diversifier set previously by "Select Diversifier" command.
    * </ul>
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_CardTransactionLegacySamExtension_prepareComputeSignature">CardTransactionLegacySamExtension.prepareComputeSignature</a>
+   * for the normative contract.
+   *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
@@ -62,6 +70,10 @@ public interface CardTransactionLegacySamExtension extends CardTransactionCrypto
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
    * {@link BasicSignatureVerificationData} or {@link TraceableSignatureVerificationData} objects.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_CardTransactionLegacySamExtension_prepareVerifySignature">CardTransactionLegacySamExtension.prepareVerifySignature</a>
+   * for the normative contract.
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
