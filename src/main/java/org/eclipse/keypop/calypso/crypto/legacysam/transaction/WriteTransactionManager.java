@@ -19,17 +19,25 @@ import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
  *
  * <p>The write operations defined here can be executed synchronously or asynchronously.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_WriteTransactionManager">WriteTransactionManager</a>
+ * for the normative contract.
+ *
  * @param <T> The type of the lowest level child object.
  * @since 0.2.0
  */
 public interface WriteTransactionManager<T extends WriteTransactionManager<T>>
-    extends TransactionManager<T> {
+    extends TransactionManager {
 
   /**
    * Schedules the execution of a "Write Ceilings" command to write a single counter ceiling.
    *
    * <p>Warning: in the case of an asynchronous transaction the content of the {@link LegacySam}
    * object will not be updated.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_WriteTransactionManager_prepareWriteCounterCeiling">WriteTransactionManager.prepareWriteCounterCeiling</a>
+   * for the normative contract.
    *
    * @param counterNumber The number of the counter whose ceiling is to be written (in range
    *     [0..26]).
@@ -52,6 +60,10 @@ public interface WriteTransactionManager<T extends WriteTransactionManager<T>>
    *
    * <p>Warning: in the case of an asynchronous transaction the content of the {@link LegacySam}
    * object will not be updated.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_WriteTransactionManager_prepareWriteCounterConfiguration">WriteTransactionManager.prepareWriteCounterConfiguration</a>
+   * for the normative contract.
    *
    * @param counterNumber The number of the counter whose ceiling is to be written (in range
    *     [0..26]).

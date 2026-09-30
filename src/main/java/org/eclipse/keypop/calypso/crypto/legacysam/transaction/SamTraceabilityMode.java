@@ -14,6 +14,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
 /**
  * The SAM traceability mode to use with traceable signature operations.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_SamTraceabilityMode">SamTraceabilityMode</a>
+ * for the normative contract.
+ *
  * @since 0.3.0
  */
 public enum SamTraceabilityMode {

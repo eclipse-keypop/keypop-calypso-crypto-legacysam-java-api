@@ -21,6 +21,10 @@ import org.eclipse.keypop.calypso.crypto.legacysam.spi.LegacySamRevocationServic
  * <p>An instance of this interface can be obtained via the method {@link
  * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createTraceableSignatureVerificationData()}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_TraceableSignatureVerificationData">TraceableSignatureVerificationData</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public interface TraceableSignatureVerificationData
@@ -31,6 +35,10 @@ public interface TraceableSignatureVerificationData
    * the revocation status of the signing SAM should be checked or not.
    *
    * <p>By default, the signature is not supposed to have been computed in "SAM traceability" mode.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_TraceableSignatureVerificationData_withSamTraceabilityMode">TraceableSignatureVerificationData.withSamTraceabilityMode</a>
+   * for the normative contract.
    *
    * @param offset The offset in bits of the SAM traceability data.
    * @param samTraceabilityMode The SAM traceability mode which have been used.
@@ -64,6 +72,10 @@ public interface TraceableSignatureVerificationData
    *
    * <p>Note that after a reset of the SAM, "PSO Verify Signature" commands being in "Busy" mode
    * fail with the busy status until the end of the busy mode duration.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_TraceableSignatureVerificationData_withoutBusyMode">TraceableSignatureVerificationData.withoutBusyMode</a>
+   * for the normative contract.
    *
    * @return The current instance.
    * @see TraceableSignatureComputationData#withoutBusyMode()

@@ -21,6 +21,10 @@ import org.eclipse.keypop.reader.CardReader;
  * <p>An instance of this interface can be obtained via the method {@link
  * LegacySamApiFactory#createSecuritySetting()}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_SecuritySetting">SecuritySetting</a>
+ * for the normative contract.
+ *
  * @since 0.2.0
  */
 public interface SecuritySetting {
@@ -28,6 +32,10 @@ public interface SecuritySetting {
   /**
    * Sets the control SAM and the reader through which it can be accessed. It will be used to
    * perform all necessary cryptographic operations.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecuritySetting_setControlSamResource">SecuritySetting.setControlSamResource</a>
+   * for the normative contract.
    *
    * @param samReader The reader to use to communicate with the SAM.
    * @param controlSam The control Legacy SAM.

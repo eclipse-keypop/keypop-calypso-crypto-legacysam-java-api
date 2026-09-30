@@ -23,6 +23,10 @@ import org.eclipse.keypop.reader.CardReader;
  * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createFreeTransactionManager(CardReader,
  * LegacySam)}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_FreeTransactionManager">FreeTransactionManager</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public interface FreeTransactionManager extends ReadTransactionManager<FreeTransactionManager> {
@@ -32,6 +36,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * <p>Once this command is processed, data is accessible using dedicated getter methods, like
    * {@link LegacySam#getCaCertificate()}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_prepareGetData">FreeTransactionManager.prepareGetData</a>
+   * for the normative contract.
    *
    * @param tag The tag to retrieve the data for.
    * @return The current instance.
@@ -45,6 +53,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * <p>Once this command is processed, the key pair data will be available in the provided output
    * {@link KeyPairContainer} objects.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_prepareGenerateCardAsymmetricKeyPair">FreeTransactionManager.prepareGenerateCardAsymmetricKeyPair</a>
+   * for the normative contract.
    *
    * @param keyPairContainer The container for the output data.
    * @return The current instance.
@@ -61,6 +73,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * <p>Once the command is processed, the result will be available in the provided input/output
    * {@link LegacyCardCertificateComputationData} object.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_prepareComputeCardCertificate">FreeTransactionManager.prepareComputeCardCertificate</a>
+   * for the normative contract.
+   *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If data is null.
@@ -74,6 +90,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * Schedules the execution of a "Write Key" command to set the lock file of the SAM.
    *
    * <p>The lock value will be transferred in plain text.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_preparePlainWriteLock">FreeTransactionManager.preparePlainWriteLock</a>
+   * for the normative contract.
    *
    * @param lockIndex The index of the lock file.
    * @param lockParameters The lock permissions parameters.
@@ -105,6 +125,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *       diversifier set previously by "Select Diversifier" command.
    * </ul>
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_prepareComputeSignature">FreeTransactionManager.prepareComputeSignature</a>
+   * for the normative contract.
+   *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
@@ -121,6 +145,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
    * {@link BasicSignatureVerificationData} or {@link TraceableSignatureVerificationData} objects.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_prepareVerifySignature">FreeTransactionManager.prepareVerifySignature</a>
+   * for the normative contract.
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
@@ -143,6 +171,10 @@ public interface FreeTransactionManager extends ReadTransactionManager<FreeTrans
    * <p>The exported target SAM context must be provided when creating an {@link
    * AsyncTransactionCreatorManager} with the method {@link
    * LegacySamApiFactory#createAsyncTransactionCreatorManager(String, SecuritySetting)}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_FreeTransactionManager_exportTargetSamContextForAsyncTransaction">FreeTransactionManager.exportTargetSamContextForAsyncTransaction</a>
+   * for the normative contract.
    *
    * @return A not empty string containing the context.
    * @since 0.2.0

@@ -17,17 +17,25 @@ import org.eclipse.keypop.calypso.crypto.legacysam.sam.LegacySam;
 /**
  * Transaction manager dedicated to "READ" operations.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_ReadTransactionManager">ReadTransactionManager</a>
+ * for the normative contract.
+ *
  * @param <T> The type of the lowest level child object.
  * @since 0.1.0
  */
 public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
-    extends TransactionManager<T> {
+    extends TransactionManager {
 
   /**
    * Schedules the execution of a "Read Parameters" command for the SAM.
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getSamParameters()}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadSamParameters">LegacySamSelectionExtension.prepareReadSamParameters</a>
+   * for the normative contract.
    *
    * @return The current instance.
    * @since 0.7.0
@@ -39,6 +47,10 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getSystemKeyParameter(SystemKeyType)}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadSystemKeyParameters">LegacySamSelectionExtension.prepareReadSystemKeyParameters</a>
+   * for the normative contract.
    *
    * @param systemKeyType The type of system key.
    * @return The current instance.
@@ -54,6 +66,10 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(int)}.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadWorkKeyParameters_byRecord">LegacySamSelectionExtension.prepareReadWorkKeyParameters</a>
+   * for the normative contract.
+   *
    * @param recordNumber The key record number (in range [1..126]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided record number is out of range.
@@ -67,6 +83,10 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    *
    * <p>Once this command is processed, the result is accessible with {@link
    * LegacySam#getWorkKeyParameter(byte, byte)}.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadWorkKeyParameters_byKifKvc">LegacySamSelectionExtension.prepareReadWorkKeyParameters</a>
+   * for the normative contract.
    *
    * @param kif The key KIF.
    * @param kvc The key KVC.
@@ -83,6 +103,10 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
    * read. The number of commands actually transmitted to the SAM will be optimized when the {@code
    * processCommands} method is executed.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadCounterStatus">LegacySamSelectionExtension.prepareReadCounterStatus</a>
+   * for the normative contract.
+   *
    * @param counterNumber The number of the counter whose status is to be read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is out of range.
@@ -93,6 +117,10 @@ public interface ReadTransactionManager<T extends ReadTransactionManager<T>>
   /**
    * Schedules the execution of a "Read Event Counter" and "Read Ceiling" commands to read the
    * status of all counters.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_LegacySamSelectionExtension_prepareReadAllCountersStatus">LegacySamSelectionExtension.prepareReadAllCountersStatus</a>
+   * for the normative contract.
    *
    * @return The current instance.
    * @since 0.2.0

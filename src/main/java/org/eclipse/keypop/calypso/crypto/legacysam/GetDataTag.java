@@ -16,6 +16,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam;
  *
  * <p>May not be applicable to all products.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_GetDataTag">GetDataTag</a>
+ * for the normative contract.
+ *
  * @since 0.5.0
  */
 public enum GetDataTag {

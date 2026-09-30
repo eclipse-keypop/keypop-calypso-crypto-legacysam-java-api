@@ -18,6 +18,10 @@ import org.eclipse.keypop.calypso.crypto.legacysam.SystemKeyType;
  *
  * <p>The write operations defined here can only be executed synchronously.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_SecureWriteTransactionManager">SecureWriteTransactionManager</a>
+ * for the normative contract.
+ *
  * @since 0.7.0
  */
 public interface SecureWriteTransactionManager
@@ -25,6 +29,10 @@ public interface SecureWriteTransactionManager
 
   /**
    * Schedules the execution of a "Write Parameters" command to write the SAM parameters file.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareWriteSamParameters">SecureWriteTransactionManager.prepareWriteSamParameters</a>
+   * for the normative contract.
    *
    * @param parameters A 29-byte byte array representing the content of the SAM parameters file.
    * @return The current instance.
@@ -36,6 +44,10 @@ public interface SecureWriteTransactionManager
   /**
    * Schedules the execution of a "Write Key" command to perform the transfer of a system key from
    * the control SAM to the target SAM.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferSystemKey">SecureWriteTransactionManager.prepareTransferSystemKey</a>
+   * for the normative contract.
    *
    * @param systemKeyType The type of system key.
    * @param kvc The KVC of the key.
@@ -51,6 +63,10 @@ public interface SecureWriteTransactionManager
    * Schedules the execution of a "Write Key" command to perform the transfer of a system key from
    * the control SAM to the target SAM, the key being first diversified (with the serial number of
    * the target SAM).
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferSystemKeyDiversified">SecureWriteTransactionManager.prepareTransferSystemKeyDiversified</a>
+   * for the normative contract.
    *
    * @param systemKeyType The type of system key.
    * @param kvc The KVC of the key.
@@ -68,6 +84,10 @@ public interface SecureWriteTransactionManager
    *
    * <p>The record number supplied indicates the destination location in the work key file. If its
    * value is zero, then the location will be chosen automatically by the SAM.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferWorkKey">SecureWriteTransactionManager.prepareTransferWorkKey</a>
+   * for the normative contract.
    *
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
@@ -88,6 +108,10 @@ public interface SecureWriteTransactionManager
    * <p>The record number supplied indicates the destination location in the work key file. If its
    * value is zero, then the location will be chosen automatically by the SAM.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferWorkKeyDiversified">SecureWriteTransactionManager.prepareTransferWorkKeyDiversified</a>
+   * for the normative contract.
+   *
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
@@ -106,6 +130,10 @@ public interface SecureWriteTransactionManager
    * <p>The record number supplied indicates the destination location in the work key file. If its
    * value is zero, then the location will be chosen automatically by the SAM.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferWorkKeyDiversified_withDiversifier">SecureWriteTransactionManager.prepareTransferWorkKeyDiversified</a>
+   * for the normative contract.
+   *
    * @param kif The KIF of the key.
    * @param kvc The KVC of the key.
    * @param workKeyParameters A 29-byte byte array containing the key parameter data.
@@ -122,6 +150,10 @@ public interface SecureWriteTransactionManager
    * Schedules the execution of a "Write Key" command to transfer a lock file from the control SAM
    * to the target SAM.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferLock">SecureWriteTransactionManager.prepareTransferLock</a>
+   * for the normative contract.
+   *
    * @param lockIndex The index of the lock file.
    * @param lockParameters The lock permissions parameters.
    * @return The current instance.
@@ -132,6 +164,10 @@ public interface SecureWriteTransactionManager
   /**
    * Schedules the execution of a "Write Key" command to transfer a lock file from the control SAM
    * to the target SAM, the key being first diversified (with the serial number of the target SAM).
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_prepareTransferLockDiversified">SecureWriteTransactionManager.prepareTransferLockDiversified</a>
+   * for the normative contract.
    *
    * @param lockIndex The index of the lock file.
    * @param lockParameters The lock permissions parameters.
@@ -144,6 +180,10 @@ public interface SecureWriteTransactionManager
    * Schedules the execution of a "Write Key" command to set the lock file of the SAM.
    *
    * <p>The lock value will be transferred in plain text.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_SecureWriteTransactionManager_preparePlainWriteLock">SecureWriteTransactionManager.preparePlainWriteLock</a>
+   * for the normative contract.
    *
    * @param lockIndex The index of the lock file.
    * @param lockParameters The lock permissions parameters.

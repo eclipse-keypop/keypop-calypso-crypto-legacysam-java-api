@@ -19,6 +19,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  * <p>An instance of this interface can be obtained via the method {@link
  * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createBasicSignatureComputationData()}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_BasicSignatureComputationData">BasicSignatureComputationData</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public interface BasicSignatureComputationData

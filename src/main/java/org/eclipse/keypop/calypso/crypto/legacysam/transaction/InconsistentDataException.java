@@ -21,6 +21,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  *       session is different from the data read outside the session.
  * </ul>
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_InconsistentDataException">InconsistentDataException</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public final class InconsistentDataException extends RuntimeException {

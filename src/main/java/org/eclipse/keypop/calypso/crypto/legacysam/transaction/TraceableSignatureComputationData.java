@@ -19,6 +19,10 @@ package org.eclipse.keypop.calypso.crypto.legacysam.transaction;
  * <p>An instance of this interface can be obtained via the method {@link
  * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createTraceableSignatureComputationData()}.
  *
+ * <p>See <a
+ * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#type_TraceableSignatureComputationData">TraceableSignatureComputationData</a>
+ * for the normative contract.
+ *
  * @since 0.1.0
  */
 public interface TraceableSignatureComputationData
@@ -37,6 +41,10 @@ public interface TraceableSignatureComputationData
    *
    * <p>By default, the "SAM traceability" mode is disabled.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_TraceableSignatureComputationData_withSamTraceabilityMode">TraceableSignatureComputationData.withSamTraceabilityMode</a>
+   * for the normative contract.
+   *
    * @param offset The offset in bits.
    * @param samTraceabilityMode The SAM traceability mode to be used.
    * @return The current instance.
@@ -54,6 +62,10 @@ public interface TraceableSignatureComputationData
    *
    * <p>By default, the "Busy" mode is enabled.
    *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_TraceableSignatureComputationData_withoutBusyMode">TraceableSignatureComputationData.withoutBusyMode</a>
+   * for the normative contract.
+   *
    * @return The current instance.
    * @since 0.1.0
    */
@@ -63,6 +75,10 @@ public interface TraceableSignatureComputationData
    * Returns the data that was used to generate the signature. If the "SAM traceability" mode was
    * enabled, then the signed data are the original data modified with the SAM traceability
    * information.
+   *
+   * <p>See <a
+   * href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/2.0.0-SNAPSHOT/YYMMDD-SP-CNATerminalAPI-CalypsoCryptoLegacySAM_v2.0.0-SNAPSHOT.html#op_TraceableSignatureComputationData_getSignedData">TraceableSignatureComputationData.getSignedData</a>
+   * for the normative contract.
    *
    * @return A byte array of the same size as the original data to be signed.
    * @throws IllegalStateException If the command has not yet been processed.
